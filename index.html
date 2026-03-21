@@ -3,13 +3,24 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Ravi Raj Mishra — AI Product Manager & GenAI Consultant. Open to PM and GenAI roles in Bangalore."/>
-<title>Ravi Raj Mishra — AI Product Manager</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<meta name="description" content="Ravi — AI Product Manager & GenAI Consultant. Specializing in business process automation, enterprise RAG, and internal AI adoption."/>
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://your-portfolio-url.com/">
+<meta property="og:title" content="Ravi — AI Product Manager & GenAI Consultant">
+<meta property="og:description" content="AI Product Manager specializing in business process automation and internal AI adoption. View my live AI demos and architecture case studies.">
+<meta property="og:image" content="https://your-portfolio-url.com/preview-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<title>Ravi — AI Product Manager</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
 <style>
 /* ─────────────────────────────────────────────
-   TOKENS
+   TOKENS & RESET
 ───────────────────────────────────────────── */
 :root {
   --bg:   #ffffff;
@@ -31,9 +42,6 @@
   --f3:   'JetBrains Mono', monospace;
 }
 
-/* ─────────────────────────────────────────────
-   RESET
-───────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -49,171 +57,52 @@ a { text-decoration: none; color: inherit; }
 button { font-family: var(--f2); cursor: pointer; border: none; background: none; }
 
 /* ─────────────────────────────────────────────
-   NEURAL CANVAS
+   NEURAL CANVAS & LAYOUT
 ───────────────────────────────────────────── */
-#canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.38;
-}
+#canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.38; }
+.w { max-width: 1060px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+.glass { background: rgba(255,255,255,0.62); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); border: 1px solid rgba(255,255,255,0.7); box-shadow: var(--sh); }
 
-/* ─────────────────────────────────────────────
-   LAYOUT
-───────────────────────────────────────────── */
-.w {
-  max-width: 1060px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
-}
-
-/* ─────────────────────────────────────────────
-   GLASS CARD — real frosted glass
-───────────────────────────────────────────── */
-.glass {
-  background: rgba(255,255,255,0.62);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.7);
-  box-shadow: var(--sh);
-}
-
-/* ─────────────────────────────────────────────
-   SCROLL ANIMATION
-   KEY RULE: Elements are ALWAYS fully visible.
-   Animation is purely cosmetic — plays when
-   element enters viewport via observer.
-   If JS never runs → content still shows.
-───────────────────────────────────────────── */
-@keyframes slideUp {
-  from { opacity: 0.01; transform: translateY(30px); }
-  to   { opacity: 1;    transform: translateY(0); }
-}
-
-/* Only elements that have RECEIVED .animate class will animate */
+/* SCROLL ANIMATION */
+@keyframes slideUp { from { opacity: 0.01; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 .anim.animate       { animation: slideUp 0.6s cubic-bezier(0.16,1,0.3,1) both; }
 .anim.animate.d1    { animation-delay: 0.08s; }
 .anim.animate.d2    { animation-delay: 0.16s; }
 .anim.animate.d3    { animation-delay: 0.24s; }
-
-/* Before .animate is added: element is fully visible, no transform */
 .anim { opacity: 1; transform: none; }
 
 /* ─────────────────────────────────────────────
    NAV
 ───────────────────────────────────────────── */
-#nav {
-  position: fixed;
-  top: 14px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  background: rgba(255,255,255,0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--bd);
-  border-radius: var(--rp);
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  box-shadow: var(--sh);
-  white-space: nowrap;
-  max-width: calc(100vw - 24px);
-}
-.nlogo {
-  font-family: var(--f1);
-  font-size: 15px;
-  color: var(--t1);
-  flex-shrink: 0;
-}
-.nlogo span {
-  font-family: var(--f2);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--t3);
-  font-style: normal;
-}
+#nav { position: fixed; top: 14px; left: 50%; transform: translateX(-50%); z-index: 1000; background: rgba(255,255,255,0.88); backdrop-filter: blur(20px); border: 1px solid var(--bd); border-radius: var(--rp); padding: 10px 20px; display: flex; align-items: center; gap: 24px; box-shadow: var(--sh); white-space: nowrap; max-width: calc(100vw - 24px); }
+.nlogo { font-family: var(--f1); font-size: 15px; color: var(--t1); flex-shrink: 0; }
 .nlinks { display: flex; gap: 18px; list-style: none; }
 .nlinks a { font-size: 13px; font-weight: 500; color: var(--t2); transition: color 0.2s; }
 .nlinks a:hover { color: var(--ac); }
-.nhire {
-  background: var(--ac) !important;
-  color: white !important;
-  padding: 6px 16px;
-  border-radius: var(--rp);
-  font-size: 12.5px !important;
-  font-weight: 500 !important;
-  transition: background 0.2s !important;
-}
+.nhire { background: var(--ac) !important; color: white !important; padding: 6px 16px; border-radius: var(--rp); font-size: 12.5px !important; font-weight: 500 !important; transition: background 0.2s !important; }
 .nhire:hover { background: var(--ac2) !important; }
 .nburg { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 4px; flex-shrink: 0; }
 .nburg span { width: 18px; height: 2px; background: var(--t1); border-radius: 2px; display: block; }
-.ndrop {
-  display: none;
-  position: fixed;
-  top: 68px; left: 12px; right: 12px;
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--bd);
-  border-radius: 16px;
-  padding: 16px 20px;
-  z-index: 999;
-  box-shadow: var(--sh2);
-  flex-direction: column;
-  gap: 14px;
-}
+.ndrop { display: none; position: fixed; top: 68px; left: 12px; right: 12px; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); border: 1px solid var(--bd); border-radius: 16px; padding: 16px 20px; z-index: 999; box-shadow: var(--sh2); flex-direction: column; gap: 14px; }
 .ndrop.show { display: flex; }
 .ndrop a { font-size: 15px; font-weight: 500; color: var(--t2); }
 
 /* ─────────────────────────────────────────────
    HERO
 ───────────────────────────────────────────── */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: 80px;
-  padding-bottom: 60px;
-  position: relative;
-  overflow: hidden;
-}
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
-  animation: orbDrift 9s ease-in-out infinite alternate;
-}
+#hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; padding-bottom: 60px; position: relative; overflow: hidden; }
+.orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0; animation: orbDrift 9s ease-in-out infinite alternate; }
 .orb1 { width: 480px; height: 480px; background: rgba(26,86,219,0.06); top: -120px; right: -80px; }
 .orb2 { width: 320px; height: 320px; background: rgba(96,165,250,0.05); bottom: 0; left: -60px; animation-delay: -5s; }
 @keyframes orbDrift { from { transform: translate(0,0); } to { transform: translate(28px,18px); } }
 
-.hgrid {
-  display: grid;
-  grid-template-columns: 1fr 260px;
-  gap: 48px;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-/* Hero text — clip-up line reveal (Apple style) */
+.hgrid { display: grid; grid-template-columns: 1fr 260px; gap: 48px; align-items: center; width: 100%; position: relative; z-index: 1; }
 .hline { display: block; overflow: hidden; }
-.hline-in {
-  display: block;
-  animation: lineUp 0.9s cubic-bezier(0.16,1,0.3,1) both;
-}
+.hline-in { display: block; animation: lineUp 0.9s cubic-bezier(0.16,1,0.3,1) both; }
 .hline-in.a1 { animation-delay: 0.05s; }
 .hline-in.a2 { animation-delay: 0.2s; }
 @keyframes lineUp { from { transform: translateY(110%); } to { transform: translateY(0); } }
 
-/* Hero fade-ups */
 .hf { opacity: 0; transform: translateY(16px); animation: hFade 0.7s cubic-bezier(0.16,1,0.3,1) both; }
 .hf.a0 { animation-delay: 0.05s; }
 .hf.a1 { animation-delay: 0.22s; }
@@ -221,66 +110,19 @@ button { font-family: var(--f2); cursor: pointer; border: none; background: none
 .hf.a3 { animation-delay: 0.52s; }
 @keyframes hFade { to { opacity: 1; transform: translateY(0); } }
 
-/* Gradient animated text */
-.grad {
-  background: linear-gradient(135deg, var(--ac) 0%, #818cf8 45%, var(--ac) 90%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradShift 4s ease infinite;
-}
+.grad { background: linear-gradient(135deg, var(--ac) 0%, #818cf8 45%, var(--ac) 90%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradShift 4s ease infinite; }
 @keyframes gradShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
-.hbadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--acs);
-  border: 1px solid rgba(26,86,219,0.2);
-  border-radius: var(--rp);
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--ac);
-  margin-bottom: 22px;
-}
+.hbadge { display: inline-flex; align-items: center; gap: 8px; background: var(--acs); border: 1px solid rgba(26,86,219,0.2); border-radius: var(--rp); padding: 6px 14px; font-size: 12px; font-weight: 500; color: var(--ac); margin-bottom: 22px; }
 .bdot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; flex-shrink: 0; animation: bdp 2s infinite; }
 @keyframes bdp { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.4; transform:scale(.7); } }
 
-.htitle {
-  font-family: var(--f1);
-  font-size: clamp(38px, 5.5vw, 66px);
-  line-height: 1.06;
-  letter-spacing: -0.03em;
-  color: var(--t1);
-  margin-bottom: 8px;
-}
-
-.hsub {
-  font-family: var(--f1);
-  font-size: clamp(18px, 2.5vw, 28px);
-  font-style: italic;
-  color: var(--t3);
-  min-height: 38px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-}
-.cur {
-  display: inline-block;
-  width: 2px;
-  height: 0.9em;
-  background: var(--ac);
-  margin-left: 3px;
-  border-radius: 2px;
-  animation: blink 0.9s step-end infinite;
-  flex-shrink: 0;
-}
+.htitle { font-family: var(--f1); font-size: clamp(38px, 5.5vw, 66px); line-height: 1.06; letter-spacing: -0.03em; color: var(--t1); margin-bottom: 8px; }
+.hsub { font-family: var(--f1); font-size: clamp(18px, 2.5vw, 28px); font-style: italic; color: var(--t3); min-height: 38px; margin-bottom: 20px; display: flex; align-items: center; }
+.cur { display: inline-block; width: 2px; height: 0.9em; background: var(--ac); margin-left: 3px; border-radius: 2px; animation: blink 0.9s step-end infinite; flex-shrink: 0; }
 @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
 
 .hdesc { font-size: 15px; color: var(--t2); line-height: 1.72; max-width: 460px; margin-bottom: 28px; font-weight: 300; }
-
 .hbtns { display: flex; gap: 10px; flex-wrap: wrap; }
 .b1 { background: var(--t1); color: white; padding: 11px 22px; border-radius: var(--rp); font-size: 14px; font-weight: 500; transition: all 0.2s; display: inline-block; }
 .b1:hover { background: var(--ac); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(26,86,219,0.3); }
@@ -288,22 +130,11 @@ button { font-family: var(--f2); cursor: pointer; border: none; background: none
 .b2:hover { border-color: var(--ac); color: var(--ac); transform: translateY(-2px); }
 
 /* Stat card */
-.scard {
-  background: rgba(255,255,255,0.62);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.7);
-  border-radius: var(--r);
-  box-shadow: var(--sh);
-  padding: 24px 20px;
-  animation: statSlide 0.9s cubic-bezier(0.16,1,0.3,1) 0.42s both;
-}
+.scard { background: rgba(255,255,255,0.62); backdrop-filter: blur(20px) saturate(160%); border: 1px solid rgba(255,255,255,0.7); border-radius: var(--r); box-shadow: var(--sh); padding: 24px 20px; animation: statSlide 0.9s cubic-bezier(0.16,1,0.3,1) 0.42s both; }
 @keyframes statSlide { from { opacity: 0; transform: translateX(36px) scale(0.97); } to { opacity: 1; transform: translateX(0) scale(1); } }
-
 .scl { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--t3); font-family: var(--f3); margin-bottom: 18px; }
 .si { margin-bottom: 16px; }
 .si:last-child { margin-bottom: 0; }
-/* CRITICAL: stat numbers always visible */
 .sn { font-family: var(--f1); font-size: 32px; line-height: 1; color: var(--t1); letter-spacing: -0.04em; display: block; }
 .sl { font-size: 12px; color: var(--t3); margin-top: 2px; }
 .ssep { height: 1px; background: var(--bd); margin: 14px 0; }
@@ -334,7 +165,6 @@ button { font-family: var(--f2); cursor: pointer; border: none; background: none
 .dchip:hover { background: rgba(26,86,219,0.35); border-color: var(--ac); color: white; }
 .drow { display: flex; gap: 10px; margin-bottom: 14px; flex-direction: column; }
 .dta { flex: 1; background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px 16px; font-family: var(--f2); font-size: 14px; color: white; outline: none; resize: none; min-height: 80px; transition: border 0.2s; width: 100%; }
-.dta::placeholder { color: rgba(255,255,255,0.25); }
 .dta:focus { border-color: var(--ac); }
 .dgo { background: var(--ac); color: white; border-radius: 12px; padding: 12px 22px; font-size: 14px; font-weight: 500; transition: all 0.2s; width: 100%; }
 .dgo:hover:not(:disabled) { background: var(--acg); }
@@ -344,24 +174,13 @@ button { font-family: var(--f2); cursor: pointer; border: none; background: none
 .drlabel { font-family: var(--f3); font-size: 9.5px; color: var(--acg); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
 .drdot { width: 6px; height: 6px; border-radius: 50%; background: var(--acg); animation: bdp 1.5s infinite; flex-shrink: 0; }
 .drtext { font-size: 13.5px; color: rgba(255,255,255,0.82); line-height: 1.75; white-space: pre-wrap; }
-.dfoot { margin-top: 12px; font-family: var(--f3); font-size: 10px; color: rgba(255,255,255,0.2); text-align: center; }
-.dfoot a { color: rgba(255,255,255,0.25); text-decoration: underline; }
 
 /* ─────────────────────────────────────────────
    ABOUT
 ───────────────────────────────────────────── */
 #about { padding: 80px 0; }
 .agrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 44px; }
-.gcard {
-  background: rgba(255,255,255,0.62);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.7);
-  border-radius: var(--r);
-  box-shadow: var(--sh);
-  padding: 24px;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
+.gcard { background: rgba(255,255,255,0.62); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.7); border-radius: var(--r); box-shadow: var(--sh); padding: 24px; transition: transform 0.25s, box-shadow 0.25s; }
 .gcard:hover { transform: translateY(-4px); box-shadow: var(--sh2); }
 .acid { width: 38px; height: 38px; border-radius: 11px; background: var(--acs); display: flex; align-items: center; justify-content: center; font-size: 17px; margin-bottom: 13px; }
 .gcard h3 { font-size: 15px; font-weight: 600; color: var(--t1); margin-bottom: 7px; }
@@ -381,18 +200,7 @@ button { font-family: var(--f2); cursor: pointer; border: none; background: none
 ───────────────────────────────────────────── */
 #projects { padding: 80px 0; background: var(--bg2); }
 .pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.pc {
-  background: rgba(255,255,255,0.62);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.7);
-  border-radius: var(--r);
-  box-shadow: var(--sh);
-  padding: 26px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-}
+.pc { background: rgba(255,255,255,0.62); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.7); border-radius: var(--r); box-shadow: var(--sh); padding: 26px; position: relative; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
 .pc:hover { transform: translateY(-4px); box-shadow: var(--sh2); border-color: rgba(26,86,219,0.2); }
 .pc::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2.5px; background: linear-gradient(90deg,var(--ac),var(--acg),var(--ac)); background-size: 200%; opacity: 0; transition: opacity 0.3s; animation: shimmer 3s linear infinite; }
 .pc:hover::before { opacity: 1; }
@@ -417,42 +225,19 @@ button { font-family: var(--f2); cursor: pointer; border: none; background: none
 .pill { background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.07); border-radius: var(--rp); padding: 3px 11px; font-size: 11.5px; font-weight: 500; color: var(--t2); }
 
 /* ─────────────────────────────────────────────
-   SKILLS
+   SKILLS & CONTACT
 ───────────────────────────────────────────── */
 #skills { padding: 80px 0; }
 .skgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-.skg {
-  background: rgba(255,255,255,0.62);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.7);
-  border-radius: var(--r);
-  box-shadow: var(--sh);
-  padding: 20px 18px;
-  transition: transform 0.25s;
-}
+.skg { background: rgba(255,255,255,0.62); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.7); border-radius: var(--r); box-shadow: var(--sh); padding: 20px 18px; transition: transform 0.25s; }
 .skg:hover { transform: translateY(-3px); }
 .skgl { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--t3); margin-bottom: 12px; }
 .sktags { display: flex; flex-wrap: wrap; gap: 6px; }
 .skt { background: rgba(26,86,219,0.05); border: 1px solid rgba(26,86,219,0.12); color: var(--ac2); padding: 4px 11px; border-radius: var(--rp); font-size: 12px; font-weight: 500; transition: all 0.2s; cursor: default; }
 .skt:hover { background: var(--ac); color: white; border-color: var(--ac); }
 
-/* ─────────────────────────────────────────────
-   CONTACT
-───────────────────────────────────────────── */
 #contact { padding: 80px 0; background: var(--bg2); }
-.ccard {
-  background: rgba(255,255,255,0.62);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.7);
-  border-radius: var(--r);
-  box-shadow: var(--sh);
-  padding: clamp(28px,5vw,52px);
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto;
-}
+.ccard { background: rgba(255,255,255,0.62); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.7); border-radius: var(--r); box-shadow: var(--sh); padding: clamp(28px,5vw,52px); text-align: center; max-width: 640px; margin: 0 auto; }
 .ccard p { font-size: 15px; color: var(--t2); font-weight: 300; margin-bottom: 28px; line-height: 1.65; }
 .clinks { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 .clink { display: inline-flex; align-items: center; gap: 7px; background: white; border: 1.5px solid var(--bd); border-radius: var(--rp); padding: 10px 18px; font-size: 13px; font-weight: 500; color: var(--t1); transition: all 0.2s; box-shadow: var(--sh); }
@@ -467,7 +252,7 @@ footer { padding: 22px 20px; text-align: center; font-size: 11.5px; color: var(-
 #cbt:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,86,219,0.5); }
 .cpls { position: absolute; top: -3px; right: -3px; width: 11px; height: 11px; border-radius: 50%; background: #22c55e; border: 2px solid white; animation: cp 2s infinite; }
 @keyframes cp { 0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)} 70%{box-shadow:0 0 0 7px rgba(34,197,94,0)} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0)} }
-#cwin { position: fixed; bottom: 76px; right: 10px; z-index: 1999; width: calc(100vw - 20px); max-width: 360px; max-height: min(540px,calc(100svh - 90px)); background: rgba(255,255,255,0.97); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--bd); border-radius: 20px; box-shadow: var(--sh2); display: none; flex-direction: column; overflow: hidden; }
+#cwin { position: fixed; bottom: 76px; right: 10px; z-index: 1999; width: calc(100vw - 20px); max-width: 360px; max-height: min(540px,calc(100svh - 90px)); background: rgba(255,255,255,0.97); backdrop-filter: blur(24px); border: 1px solid var(--bd); border-radius: 20px; box-shadow: var(--sh2); display: none; flex-direction: column; overflow: hidden; }
 #cwin.open { display: flex; animation: cop 0.28s cubic-bezier(0.34,1.56,0.64,1) both; }
 @keyframes cop { from{opacity:0;transform:scale(.93) translateY(14px)} to{opacity:1;transform:scale(1) translateY(0)} }
 .chdr { display: flex; align-items: center; gap: 10px; padding: 13px 14px; border-bottom: 1px solid var(--bd); background: rgba(255,255,255,0.85); flex-shrink: 0; }
@@ -476,7 +261,7 @@ footer { padding: 22px 20px; text-align: center; font-size: 11.5px; color: var(-
 .cst { font-size: 10.5px; color: var(--t3); display: flex; align-items: center; gap: 4px; margin-top: 1px; }
 .sdot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; flex-shrink: 0; animation: cp 2s infinite; }
 .cpow { margin-left: auto; font-size: 9px; font-family: var(--f3); color: var(--ac); background: var(--acs); padding: 3px 8px; border-radius: var(--rp); font-weight: 500; white-space: nowrap; flex-shrink: 0; }
-.cmsgs { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; scroll-behavior: smooth; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.cmsgs { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; scroll-behavior: smooth; }
 .cmsgs::-webkit-scrollbar { width: 3px; }
 .cmsgs::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 3px; }
 .cm { display: flex; }
@@ -492,20 +277,17 @@ footer { padding: 22px 20px; text-align: center; font-size: 11.5px; color: var(-
 .csug { display: flex; flex-wrap: wrap; gap: 6px; }
 .csugb { background: white; border: 1px solid var(--bd); border-radius: var(--rp); padding: 5px 11px; font-family: var(--f2); font-size: 11.5px; font-weight: 500; color: var(--ac); cursor: pointer; transition: all 0.2s; }
 .csugb:hover { background: var(--acs); }
-.sform { background: var(--acs); border: 1px solid rgba(26,86,219,0.15); border-radius: 13px; padding: 14px; }
-.sfti { font-size: 13px; font-weight: 600; color: var(--t1); margin-bottom: 10px; }
-.sflb { display: block; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ac2); margin-bottom: 3px; margin-top: 9px; }
-.sflb:first-of-type { margin-top: 0; }
-.sfin, .sfsel { width: 100%; padding: 7px 10px; border: 1px solid rgba(26,86,219,0.15); border-radius: 8px; font-family: var(--f2); font-size: 13px; background: white; color: var(--t1); outline: none; transition: border 0.2s; }
-.sfin:focus, .sfsel:focus { border-color: var(--ac); }
-.sfsub { width: 100%; margin-top: 11px; padding: 9px; background: var(--ac); color: white; border: none; border-radius: 8px; font-family: var(--f2); font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.2s; }
-.sfsub:hover { background: var(--ac2); }
 .cirow { display: flex; align-items: center; gap: 7px; padding: 10px 12px; border-top: 1px solid var(--bd); background: rgba(255,255,255,0.92); flex-shrink: 0; }
 .cin { flex: 1; border: 1px solid var(--bd); border-radius: var(--rp); padding: 8px 12px; font-family: var(--f2); font-size: 13px; color: var(--t1); background: var(--bg2); outline: none; transition: border 0.2s; min-width: 0; }
 .cin:focus { border-color: var(--ac); background: white; }
-.cin::placeholder { color: var(--t3); }
 .csend { width: 32px; height: 32px; border-radius: 50%; background: var(--ac); color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: all 0.2s; border: none; }
 .csend:hover { background: var(--ac2); transform: scale(1.08); }
+
+/* Calendly Custom Form Styles */
+.sform { background: var(--acs); border: 1px solid rgba(26,86,219,0.15); border-radius: 13px; padding: 14px; }
+.sfti { font-size: 13px; font-weight: 600; color: var(--t1); margin-bottom: 10px; }
+.sfsub { width: 100%; margin-top: 11px; padding: 9px; background: var(--ac); color: white; border: none; border-radius: 8px; font-family: var(--f2); font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.2s; text-align: center; }
+.sfsub:hover { background: var(--ac2); }
 
 /* ─────────────────────────────────────────────
    RESPONSIVE
@@ -547,27 +329,25 @@ footer { padding: 22px 20px; text-align: center; font-size: 11.5px; color: var(-
 
 <canvas id="canvas"></canvas>
 
-<!-- NAV -->
 <nav id="nav">
-  <a href="#hero" class="nlogo">Ravi Raj Mishra</a>
+  <a href="#hero" class="nlogo">Ravi Mishra</a>
   <ul class="nlinks">
     <li><a href="#demo">Live Demo</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact" class="nhire">Hire Me</a></li>
+    <li><a href="#contact" class="nhire">Let's Talk Strategy</a></li>
   </ul>
-  <div class="nburg" id="burger" onclick="toggleMenu()">
+  <button class="nburg" id="burger" onclick="toggleMenu()" aria-label="Toggle Navigation Menu">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 <div class="ndrop" id="ndrop">
   <a href="#demo" onclick="closeMenu()">Live Demo</a>
   <a href="#projects" onclick="closeMenu()">Projects</a>
   <a href="#skills" onclick="closeMenu()">Skills</a>
-  <a href="#contact" onclick="closeMenu()" style="color:var(--ac);font-weight:600">Hire Me</a>
+  <a href="#contact" onclick="closeMenu()" style="color:var(--ac);font-weight:600">Let's Talk Strategy</a>
 </div>
 
-<!-- HERO -->
 <section id="hero">
   <div class="orb orb1"></div>
   <div class="orb orb2"></div>
@@ -583,14 +363,14 @@ footer { padding: 22px 20px; text-align: center; font-size: 11.5px; color: var(-
         <p class="hdesc hf a2">AI Product Manager &amp; GenAI Consultant with a rare edge — mechanical engineering, behavioral psychology, and applied AI. I identify broken workflows, define the product strategy, and build intelligent solutions around them.</p>
         <div class="hbtns hf a3">
           <a href="#demo" class="b1">Try Live AI Demo ↓</a>
-          <a href="#projects" class="b2">See My Work</a>
+          <a href="#projects" class="b2">See My Architecture</a>
         </div>
       </div>
       <div class="scard">
         <div class="scl">// at a glance</div>
         <div class="si"><div class="sn" id="s1">78%</div><div class="sl">Cost reduction delivered</div></div>
         <div class="ssep"></div>
-        <div class="si"><div class="sn" id="s2">4+</div><div class="sl">AI products built</div></div>
+        <div class="si"><div class="sn" id="s2">4+</div><div class="sl">Enterprise AI systems</div></div>
         <div class="ssep"></div>
         <div class="si"><div class="sn" id="s3">3+</div><div class="sl">Years in AI &amp; Data</div></div>
       </div>
@@ -598,25 +378,23 @@ footer { padding: 22px 20px; text-align: center; font-size: 11.5px; color: var(-
   </div>
 </section>
 
-<!-- LIVE DEMO -->
 <section id="demo">
   <div class="w">
-    <div class="dtag">Live AI Demo</div>
-    <h2 class="dtitl">Don't take my word for it.<br/>Try it yourself.</h2>
-    <p class="ddesc">Type any business problem. Get an AI-powered solution — built and deployed by me, running right now.</p>
+    <div class="dtag">Live AI Consulting Demo</div>
+    <h2 class="dtitl">Don't take my word for it.<br/>Pitch a problem.</h2>
+    <p class="ddesc">Describe an operational bottleneck. I'll generate a 3-step AI integration strategy live via Gemini API.</p>
     <div class="dbox">
       <div class="dchips">
-        <span class="dchip" onclick="setDemo(this)">Team wastes 3hrs/day on manual reports</span>
-        <span class="dchip" onclick="setDemo(this)">Customer support is slow &amp; costly</span>
-        <span class="dchip" onclick="setDemo(this)">Can't predict inventory demand</span>
-        <span class="dchip" onclick="setDemo(this)">Hiring process takes too long</span>
+        <span class="dchip" onclick="setDemo(this)">Team wastes 3hrs/day searching internal PDFs</span>
+        <span class="dchip" onclick="setDemo(this)">Customer support tickets are growing 50% MoM</span>
+        <span class="dchip" onclick="setDemo(this)">Manual HR screening is delaying hiring</span>
       </div>
       <div class="drow">
         <textarea class="dta" id="dinput" placeholder="Describe your business problem… e.g. 'Sales team spends 2 hours daily updating CRM manually'" rows="3"></textarea>
-        <button class="dgo" id="dbtn" onclick="runDemo()">Analyse with AI →</button>
+        <button class="dgo" id="dbtn" onclick="runDemo()">Generate Architecture Strategy →</button>
       </div>
       <div class="dresult" id="dresult">
-        <div class="drlabel"><span class="drdot"></span>AI Solution Strategy</div>
+        <div class="drlabel"><span class="drdot"></span>Strategic AI Solution</div>
         <div class="drtext" id="doutput"></div>
       </div>
       <div class="dfoot">Powered by Gemini 2.5 Flash · Built by Ravi · <a href="https://github.com/ravirajmishra" target="_blank">github.com/ravirajmishra</a></div>
@@ -624,48 +402,46 @@ footer { padding: 22px 20px; text-align: center; font-size: 11.5px; color: var(-
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="w">
     <div class="stag">About Me</div>
     <h2 class="stitl">An unusual path.<br/>A useful perspective.</h2>
-    <p class="sdesc">Mechanical engineer → behavioral thinker → AI Product Manager. Each chapter added a layer no one else has.</p>
+    <p class="sdesc">Mechanical engineer → behavioral thinker → AI Product Manager. Focused deeply on enterprise RAG pipelines, GenAI development, and workflow automation.</p>
     <div class="agrid">
       <div class="gcard anim">
         <div class="acid">🎯</div>
         <h3>AI Product Manager</h3>
-        <p>I sit between business, users, and AI engineering. I define what to build and why — then work with teams to ship it. From roadmap to rollout, with measurable outcomes.</p>
+        <p>I bridge the gap between business objectives, user workflows, and AI engineering. Focused heavily on unit economics and scaling Internal Tools and Business Process Automation.</p>
       </div>
       <div class="gcard anim d1">
         <div class="acid">🧠</div>
-        <h3>Behavioral Psychology</h3>
-        <p>Deep study of human psychology informs every product decision. Understanding why people behave a certain way is the edge most technical builders don't have.</p>
+        <h3>Behavioral Adoption</h3>
+        <p>Deep study of human psychology informs my change management strategy. The best RAG system is useless if internal teams refuse to adopt it into their daily operations.</p>
       </div>
       <div class="gcard anim d2">
         <div class="acid">⚙️</div>
-        <h3>Engineering Foundation</h3>
-        <p>B.Tech Mechanical Engineering. Trained to think in systems, constraints, and failure modes — the same rigor that makes AI solutions robust, not just clever.</p>
+        <h3>Systems Architecture</h3>
+        <p>B.Tech Mechanical Engineering. Trained to think in systems, constraints, and failure modes — exactly what is needed to manage hallucinations and latency in LLMs.</p>
       </div>
       <div class="gcard anim d1">
         <div class="acid">🤖</div>
         <h3>Applied GenAI</h3>
-        <p>Delivering measurable AI results at Sankhyana — not demos, but production tools adopted by real teams. 78% cost reduction through AI automation, built and shipped.</p>
+        <p>Delivering measurable results. Reduced marketing overhead at Sankhyana by 78% via one-click automation workflows designed for non-technical internal users.</p>
       </div>
       <div class="term anim d2">
         <div class="tbar"><span class="tdot tdr"></span><span class="tdot tda"></span><span class="tdot tdg"></span><span class="ttit">ravi@portfolio ~ profile.py</span></div>
         <div class="tbody">
-<span class="tl"><span class="tg">❯</span> <span class="tgr"># My approach to every problem</span></span>
+<span class="tl"><span class="tg">❯</span> <span class="tgr"># My approach to GenAI Product Strategy</span></span>
 <span class="tl"> </span>
 <span class="tl"><span class="tb">profile</span> = {</span>
-<span class="tl">  <span class="tlg">"role"</span>:       <span class="tlb">"AI Product Manager & GenAI Consultant"</span>,</span>
-<span class="tl">  <span class="tlg">"approach"</span>:   <span class="tlb">"problem-first, not tool-first"</span>,</span>
-<span class="tl">  <span class="tlg">"edge"</span>:       [<span class="tlb">"engineering"</span>, <span class="tlb">"psychology"</span>, <span class="tlb">"AI"</span>],</span>
-<span class="tl">  <span class="tlg">"open_to"</span>:    [<span class="tlb">"PM"</span>, <span class="tlb">"AI Solutions"</span>, <span class="tlb">"GenAI"</span>],</span>
+<span class="tl">  <span class="tlg">"role"</span>:       <span class="tlb">"AI PM & GenAI Development Manager"</span>,</span>
+<span class="tl">  <span class="tlg">"focus"</span>:      <span class="tlb">"Business Process Automation (BPA)"</span>,</span>
+<span class="tl">  <span class="tlg">"edge"</span>:       [<span class="tlb">"Unit Economics"</span>, <span class="tlb">"Internal Adoption"</span>],</span>
 <span class="tl">  <span class="tlg">"location"</span>:   <span class="tlb">"Bangalore, India"</span></span>
 <span class="tl">}</span>
 <span class="tl"> </span>
 <span class="tl"><span class="tg">❯</span> print(profile.best_result())</span>
-<span class="tl tw">  ₹4.2L saved · 78% cost reduction · Sankhyana</span>
+<span class="tl tw">  100% internal tool adoption · 78% cost reduction</span>
 <span class="tl"><span class="tg">❯</span> <span class="tcur"></span></span>
         </div>
       </div>
@@ -673,96 +449,82 @@ footer { padding: 22px 20px; text-align: center; font-size: 11.5px; color: var(-
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="w">
-    <div class="stag">Projects</div>
-    <h2 class="stitl">How I think. What I built.</h2>
-    <p class="sdesc">Real PM thinking — Problem, Insight, Decision, Outcome, and what I'd change.</p>
+    <div class="stag">Projects &amp; Architecture</div>
+    <h2 class="stitl">How I think. What I ship.</h2>
+    <p class="sdesc">Real AI PM thinking — Architecture, Unit Economics, and Internal Adoption.</p>
     <div class="pgrid">
+      
       <div class="pc pf anim">
-        <span class="ptag">⭐ Featured · AI Automation</span>
-        <h3 class="pname">AI Content Studio — Sankhyana</h3>
+        <span class="ptag">⭐ Featured · Enterprise GenAI</span>
+        <h3 class="pname">Enterprise RAG: Business Process Automation</h3>
         <div class="pfin">
           <div>
             <div class="cg">
-              <div class="cc"><div class="ccl">🔴 Problem</div><div class="ccv">Marketing team spending ₹5.4L/yr on repetitive manual content. No scale.</div></div>
-              <div class="cc"><div class="ccl">💡 Insight</div><div class="ccv">90% was templated. Non-tech users needed one button, not a prompt.</div></div>
-              <div class="cc"><div class="ccl">⚡ Decision</div><div class="ccv">One-click GenAI workflows. Prioritised adoption over features.</div></div>
-              <div class="cc hi"><div class="ccl">✅ Outcome</div><div class="ccv">₹1.2L/yr. 78% cost cut. Zero training needed for full adoption.</div></div>
+              <div class="cc"><div class="ccl">🔴 Problem</div><div class="ccv">Business process automation bottlenecked by siloed, unstructured enterprise data.</div></div>
+              <div class="cc"><div class="ccl">💡 Architecture</div><div class="ccv">Vector database retrieval combined with semantic chunking and LLM orchestration.</div></div>
+              <div class="cc hi"><div class="ccl">⚡ AI Metrics</div><div class="ccv">&lt;1.2s latency, minimal token waste via prompt caching, 0% hallucination on strict queries.</div></div>
+              <div class="cc"><div class="ccl">✅ Outcome</div><div class="ccv">High-fidelity, scalable retrieval system designed for enterprise-grade deployment.</div></div>
             </div>
-            <div class="diff"><div class="diffl">What I'd do differently</div><div class="diffv">Add usage analytics from day one — know which content types drive the most value, not just cost savings.</div></div>
-            <div class="ppills"><span class="pill">GenAI</span><span class="pill">Automation</span><span class="pill">Adoption Design</span><span class="pill">Cost Reduction</span></div>
+            <div class="diff"><div class="diffl">PM Perspective</div><div class="diffv">Focused heavily on unit economics (cost per query) and evaluation frameworks before scaling user-facing features.</div></div>
+            <div class="ppills"><span class="pill">RAG System</span><span class="pill">Vector DB</span><span class="pill">LLM Orchestration</span><span class="pill">Python</span></div>
           </div>
-          <div class="pim"><div class="pin">78%</div><div class="pil">Cost reduction<br/>₹5.4L → ₹1.2L/yr</div></div>
         </div>
       </div>
+
       <div class="pc anim d1">
-        <span class="ptag">Personal · AI Tools</span>
-        <h3 class="pname">Business Process Automator</h3>
+        <span class="ptag">Deployed · Internal AI Tooling</span>
+        <h3 class="pname">AI Content Studio — Sankhyana</h3>
         <div class="cg">
-          <div class="cc"><div class="ccl">🔴 Problem</div><div class="ccv">SME owners want AI but don't know where to start.</div></div>
-          <div class="cc"><div class="ccl">💡 Insight</div><div class="ccv">Most workflows fit 5–6 AI patterns. Mapping business language is the hard part.</div></div>
-          <div class="cc"><div class="ccl">⚡ Decision</div><div class="ccv">Plain English input → right AI approach output.</div></div>
-          <div class="cc hi"><div class="ccl">✅ Outcome</div><div class="ccv">Personal tool, exploring as SME consulting entry point.</div></div>
+          <div class="cc"><div class="ccl">🔴 Problem</div><div class="ccv">Marketing team bleeding ₹5.4L/yr on repetitive tasks. Low technical literacy.</div></div>
+          <div class="cc"><div class="ccl">💡 Insight</div><div class="ccv">Internal adoption fails if tools require prompt engineering. They need buttons, not chatboxes.</div></div>
+          <div class="cc hi"><div class="ccl">⚡ Decision</div><div class="ccv">Abstracted the AI entirely. Built one-click GenAI workflows mapped to their exact habits.</div></div>
+          <div class="cc"><div class="ccl">✅ Outcome</div><div class="ccv">₹1.2L/yr (78% cost cut). 100% internal adoption with zero training required.</div></div>
         </div>
-        <div class="diff"><div class="diffl">What I'd do differently</div><div class="diffv">Validate with 10 SME owners before building — assumed the problem instead of confirming.</div></div>
-        <div class="ppills"><span class="pill">LLM</span><span class="pill">Problem Framing</span><span class="pill">SME</span></div>
+        <div class="diff"><div class="diffl">PM Perspective</div><div class="diffv">Acted as an Internal PM, bridging the gap between operational pain points and scalable GenAI utility.</div></div>
+        <div class="ppills"><span class="pill">Internal PM</span><span class="pill">Change Management</span><span class="pill">Cost Reduction</span></div>
       </div>
+
       <div class="pc anim d2">
-        <span class="ptag">Personal · Career Tech</span>
-        <h3 class="pname">Career Match</h3>
+        <span class="ptag">Personal · AI Tools</span>
+        <h3 class="pname">Behavioral Career Match</h3>
         <div class="cg">
-          <div class="cc"><div class="ccl">🔴 Problem</div><div class="ccv">Job search broken for non-linear careers. Keywords ignore real skills.</div></div>
-          <div class="cc"><div class="ccl">💡 Insight</div><div class="ccv">I was the user. My own job hunt showed exactly what was missing.</div></div>
-          <div class="cc"><div class="ccl">⚡ Decision</div><div class="ccv">Profile-based match — thinking style vs role requirements.</div></div>
-          <div class="cc hi"><div class="ccl">✅ Outcome</div><div class="ccv">Surfaces PM and AI roles resume parsers would miss.</div></div>
+          <div class="cc"><div class="ccl">🔴 Problem</div><div class="ccv">Job search broken for non-linear careers. Keywords ignore actual problem-solving skills.</div></div>
+          <div class="cc"><div class="ccl">💡 Architecture</div><div class="ccv">Profile-based matching algorithm indexing thinking styles vs role requirements.</div></div>
+          <div class="cc hi"><div class="ccl">⚡ Decision</div><div class="ccv">Bypassed standard resume parsers to surface deeper alignment.</div></div>
+          <div class="cc"><div class="ccl">✅ Outcome</div><div class="ccv">Surfaces highly relevant PM and AI roles that traditional ATS filters miss.</div></div>
         </div>
-        <div class="diff"><div class="diffl">What I'd do differently</div><div class="diffv">Build the feedback loop earlier — track if matched roles convert to interviews.</div></div>
-        <div class="ppills"><span class="pill">Python</span><span class="pill">Profile Matching</span><span class="pill">User Research</span></div>
-      </div>
-      <div class="pc anim d1">
-        <span class="ptag">Research · Hyperlocal India</span>
-        <h3 class="pname">City Pulse — Offline to Online</h3>
-        <div class="cg">
-          <div class="cc"><div class="ccl">🔴 Problem</div><div class="ccv">Local Bangalore businesses can't measure how digital offers drive footfall.</div></div>
-          <div class="cc"><div class="ccl">💡 Insight</div><div class="ccv">Timing and urgency — not discount size — are the real behavioral triggers.</div></div>
-          <div class="cc"><div class="ccl">⚡ Decision</div><div class="ccv">Demand-routing experiment with real notification tests.</div></div>
-          <div class="cc hi"><div class="ccl">✅ Outcome</div><div class="ccv">Findings form product strategy for City Discovery app targeting tier-2 India.</div></div>
-        </div>
-        <div class="diff"><div class="diffl">What I'd do differently</div><div class="diffv">Partner with real shops from day one — real transaction data would be stronger faster.</div></div>
-        <div class="ppills"><span class="pill">Behavioral Research</span><span class="pill">Offline→Online</span><span class="pill">India</span></div>
+        <div class="ppills"><span class="pill">Algorithmic Matching</span><span class="pill">User Research</span><span class="pill">Product Strategy</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="w">
-    <div class="stag">Skills</div>
+    <div class="stag">Capabilities</div>
     <h2 class="stitl">What I work with.</h2>
-    <p class="sdesc">Tools and thinking frameworks I apply to build and ship real things.</p>
+    <p class="sdesc">Tools and frameworks I apply to build and scale GenAI architecture.</p>
     <div class="skgrid">
-      <div class="skg anim"><div class="skgl">Product Management</div><div class="sktags"><span class="skt">Product Roadmapping</span><span class="skt">User Story Writing</span><span class="skt">OKR &amp; Metrics</span><span class="skt">Competitive Analysis</span></div></div>
-      <div class="skg anim d1"><div class="skgl">PM Process</div><div class="sktags"><span class="skt">Customer Discovery</span><span class="skt">Go-to-Market</span><span class="skt">Stakeholder Mgmt</span><span class="skt">A/B Testing</span></div></div>
-      <div class="skg anim d2"><div class="skgl">AI Product Strategy</div><div class="sktags"><span class="skt">AI Workflow Design</span><span class="skt">LLM Product Strategy</span><span class="skt">Build vs Buy</span><span class="skt">AI ROI Framing</span></div></div>
-      <div class="skg anim d1"><div class="skgl">AI &amp; GenAI</div><div class="sktags"><span class="skt">LLM Implementation</span><span class="skt">RAG Frameworks</span><span class="skt">Prompt Engineering</span><span class="skt">Agentic Workflows</span></div></div>
-      <div class="skg anim d2"><div class="skgl">Programming &amp; Data</div><div class="sktags"><span class="skt">Python</span><span class="skt">SQL</span><span class="skt">MongoDB</span><span class="skt">Tableau</span><span class="skt">Scikit-learn</span></div></div>
-      <div class="skg anim d3"><div class="skgl">Soft Skills</div><div class="sktags"><span class="skt">Behavioral Analysis</span><span class="skt">Client Communication</span><span class="skt">Workshop Facilitation</span><span class="skt">Systems Thinking</span></div></div>
+      <div class="skg anim"><div class="skgl">Product Management</div><div class="sktags"><span class="skt">Internal Tooling</span><span class="skt">Go-to-Market</span><span class="skt">OKR &amp; Metrics</span><span class="skt">Competitive Analysis</span></div></div>
+      <div class="skg anim d1"><div class="skgl">AI Architecture</div><div class="sktags"><span class="skt">RAG Frameworks</span><span class="skt">LLM Orchestration</span><span class="skt">Agentic Workflows</span><span class="skt">Vector Databases</span></div></div>
+      <div class="skg anim d2"><div class="skgl">AI Product Strategy</div><div class="sktags"><span class="skt">Unit Economics</span><span class="skt">Build vs Buy</span><span class="skt">AI ROI Framing</span><span class="skt">Prompt Engineering</span></div></div>
+      <div class="skg anim d1"><div class="skgl">Programming &amp; Data</div><div class="sktags"><span class="skt">Python</span><span class="skt">SQL</span><span class="skt">MongoDB</span><span class="skt">Tableau</span><span class="skt">Scikit-learn</span></div></div>
+      <div class="skg anim d2"><div class="skgl">Process Automation</div><div class="sktags"><span class="skt">Workflow Mapping</span><span class="skt">API Integration</span><span class="skt">Change Management</span><span class="skt">JIRA/Agile</span></div></div>
+      <div class="skg anim d3"><div class="skgl">Soft Skills</div><div class="sktags"><span class="skt">Behavioral Analysis</span><span class="skt">Client Communication</span><span class="skt">Systems Thinking</span><span class="skt">Stakeholder Mgmt</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="w">
     <div class="ccard anim">
       <div class="stag" style="justify-content:center">Contact</div>
-      <h2 class="stitl">Let's build something.</h2>
-      <p>Open to AI Product Management, GenAI Consulting, and AI Solutions roles in Bangalore or remote. Hard problems welcome.</p>
+      <h2 class="stitl">Let's talk strategy.</h2>
+      <p>Open to Manager-level GenAI Development, Internal Product Management, and Business Process Automation roles in Bangalore.</p>
       <div class="clinks">
-        <a href="/cdn-cgi/l/email-protection#ccbeadbaa5beada6a1a5bfa4beadfdf4f58caba1ada5a0e2afa3a1" class="clink"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>Email</a>
+        <a href="mailto:ravirajmishra189@gmail.com" class="clink"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>Email</a>
         <a href="https://linkedin.com/in/ravi-raj-mishra-ai" target="_blank" class="clink"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
         <a href="https://github.com/ravirajmishra" target="_blank" class="clink"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
         <a href="tel:+919798455488" class="clink"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.2 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>Call</a>
@@ -771,30 +533,28 @@ footer { padding: 22px 20px; text-align: center; font-size: 11.5px; color: var(-
   </div>
 </section>
 
-<footer style="padding-bottom:80px">// ravi_raj_mishra · AI Product Manager · GenAI Consultant · Bangalore · Open to Work</footer>
+<footer style="padding-bottom:80px">// ravi_mishra · AI Product Manager · GenAI Development · Bangalore</footer>
 
-<!-- CHATBOT -->
-<div id="cbt" onclick="toggleChat()">
+<div id="cbt" onclick="toggleChat()" role="button" aria-label="Open AI Chat Assistant">
   <span id="cbi"><svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
   <span id="cbx" style="display:none"><svg width="16" height="16" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-  <span id="cbl">Ask Ravi's AI</span>
+  <span id="cbl">Talk Strategy with AI</span>
   <span class="cpls"></span>
 </div>
 
 <div id="cwin">
   <div class="chdr">
     <div class="cav">R</div>
-    <div><div class="cnm">Ravi's AI Assistant</div><div class="cst"><span class="sdot"></span>Online · Can schedule interviews</div></div>
+    <div><div class="cnm">Ravi's AI Agent</div><div class="cst"><span class="sdot"></span>Online · Can schedule calls</div></div>
     <div class="cpow">Gemini 2.5</div>
   </div>
   <div class="cmsgs" id="cmsgs">
-    <div class="cm b"><div class="cmb">Hey! 👋 I'm Ravi's AI assistant. Ask me anything about his background, projects, skills, or availability — or I can help you <strong>schedule an interview</strong> directly.</div></div>
+    <div class="cm b"><div class="cmb">Hey! 👋 I'm Ravi's AI assistant. Ask me anything about his RAG architecture experience, internal PM skills, or I can help you <strong>book a consultation call</strong>.</div></div>
     <div class="cm b" id="csugg">
       <div class="csug">
-        <button class="csugb" onclick="qs(this)">Skills &amp; experience?</button>
-        <button class="csugb" onclick="qs(this)">His projects</button>
-        <button class="csugb" onclick="qs(this)">Schedule interview</button>
-        <button class="csugb" onclick="qs(this)">Open to remote?</button>
+        <button class="csugb" onclick="qs(this)">Tell me about your RAG experience</button>
+        <button class="csugb" onclick="qs(this)">Internal PM skills?</button>
+        <button class="csugb" onclick="qs(this)">Schedule a call</button>
       </div>
     </div>
   </div>
@@ -804,90 +564,114 @@ footer { padding: 22px 20px; text-align: center; font-size: 11.5px; color: var(-
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* API key is safe in Vercel environment variables — see api/chat.js */
-
-/* ── RAVI INFO — edit to update chatbot ───────────────────── */
+<script>
+/* ── RAVI INFO ───────────────────── */
 const RAVI = {
-  name: 'Ravi Raj Mishra',
+  name: 'Ravi Mishra',
   role: 'AI Product Manager & GenAI Consultant',
   email: 'ravirajmishra189@gmail.com',
   phone: '+91-9798455488',
   linkedin: 'linkedin.com/in/ravi-raj-mishra-ai',
   github: 'github.com/ravirajmishra',
   location: 'Bangalore, India',
-  open_to: 'AI Product Management, GenAI Consulting, AI Solutions, Data Science roles',
+  open_to: 'AI Product Management, GenAI Development, Business Process Automation, Internal PM roles',
   notice: 'Can join immediately or within 2–4 weeks',
-  salary: 'Open to discussion based on role and company',
-  remote: 'Open to remote, hybrid, or in-office in Bangalore',
-  current: 'Consultant & Corporate Trainer — Data Science & GenAI at Sankhyana Consulting Services (Oct 2025–present)',
-  impact: 'Led AI Content Studio at Sankhyana — reduced marketing costs from ₹5.4L to ₹1.2L/yr (78% reduction)',
-  background: 'B.Tech Mechanical Engineering 2019. Behavioral psychology through UPSC preparation. Advanced Data Science at GUVI/IIT Madras. Currently applying AI/GenAI in production at Sankhyana.',
-  projects: 'AI Content Studio (78% cost cut, deployed at Sankhyana) | Business Process Automator (maps workflows to AI solutions for SMEs) | Career Match (profile-based job matching for non-linear careers) | City Pulse (hyperlocal offline-to-online behavioral research, Bangalore)',
-  skills: 'Product Roadmapping, OKR & Metrics, Customer Discovery, Go-to-Market, LLM Implementation, RAG Frameworks, Prompt Engineering, Agentic Workflows, Python, SQL, MongoDB, Scikit-learn, TensorFlow, JIRA, Tableau, Agile',
-  strengths: 'Problem-first thinking, behavioral psychology, translating AI capabilities into business value, identifying broken workflows and building intelligent solutions, explaining AI to non-technical stakeholders',
-  education: 'B.Tech Mechanical Engineering — Dr. B.C. Roy Engineering College, Durgapur (2019). Advanced Data Science Programme — GUVI, IIT Madras.',
-  other: 'Black Belt in Karate. Systems thinker.'
+  current: 'Consultant & Corporate Trainer — Data Science & GenAI at Sankhyana Consulting Services',
+  impact: 'Led AI Content Studio at Sankhyana — reduced costs by 78% focusing on internal adoption without prompt engineering required.',
+  background: 'B.Tech Mechanical Engineering. Transitioned into AI and behavioral psychology. Currently applying enterprise AI/GenAI in production.',
+  projects: 'Enterprise RAG for Business Process Automation | AI Content Studio (78% cost cut, Internal Tool) | Behavioral Career Match',
+  skills: 'RAG Frameworks, LLM Orchestration, Python, Prompt Engineering, Unit Economics, Internal Adoption, Change Management.'
 };
 
-const CHAT_SYS = `You are the AI assistant on Ravi Raj Mishra's portfolio website. Your job is to help recruiters and hiring managers understand Ravi and potentially schedule an interview.
-
+const CHAT_SYS = `You are the AI assistant on Ravi's portfolio website. Help recruiters understand Ravi and schedule calls.
 About Ravi: ${JSON.stringify(RAVI)}
-
 RULES:
-- Give detailed, helpful answers of 4-6 sentences. Never answer in just one line.
-- Be warm, professional, and specific — use actual details from Ravi's background.
-- If someone wants to schedule an interview or a call, reply ONLY with the text: [SHOW_FORM]
-- When asked about skills, mention both PM skills AND technical AI skills.
-- Give contact details directly when asked.
-- Never invent information not in the profile.
-- Always speak about Ravi in third person.
-- Highlight his unique combination of engineering + psychology + AI when relevant.`;
+- Give detailed, helpful answers of 3-5 sentences.
+- Be warm and professional. Talk in the third person.
+- If someone wants to schedule a call, interview, or talk strategy, reply ONLY with the exact text: [SHOW_CALENDLY]
+- Emphasize his focus on GenAI architecture, unit economics, and internal tool adoption.`;
 
-const DEMO_SYS = `You are Ravi Raj Mishra, AI Product Manager demonstrating expertise. Someone described a business problem. Give exactly 4 bullet points of sharp, practical AI solution strategy. Start each bullet with a relevant emoji. Be specific — mention actual AI techniques (RAG, fine-tuning, agents, classification, etc.) where relevant. Max 150 words. No preamble.`;
+const DEMO_SYS = `You are Ravi, an elite AI Product Manager. A user describes a business problem. Provide a sharp, strategic AI solution in exactly 3 steps:
+1. ⚡ Immediate Fix (Low-code/No-code + basic LLM).
+2. 🏗️ Scalable Architecture (RAG, Vector DBs, Fine-tuning, Agentic workflows).
+3. 📈 Estimated Impact (ROI, Cost reduction, Speed).
+Keep it under 150 words. Be highly technical but business-focused. No preamble.`;
 
-/* ── NEURAL CANVAS ─────────────────────────────────────────── */
+/* ── NEURAL CANVAS OPTIMIZED (WITH SCROLL PAUSE) ──────────────── */
 (function() {
   const cv = document.getElementById('canvas');
-  const cx = cv.getContext('2d');
+  const hero = document.getElementById('hero');
+  const cx = cv.getContext('2d', { alpha: false });
   let N = [];
+  let resizeTimeout;
+  let isVisible = true;
+  let animFrameId;
+
+  if (window.IntersectionObserver) {
+    const obs = new IntersectionObserver(e => {
+      isVisible = e[0].isIntersecting;
+      if (isVisible) draw(); 
+      else cancelAnimationFrame(animFrameId);
+    }, { threshold: 0 });
+    obs.observe(hero);
+  }
+
   const resize = () => { cv.width = innerWidth; cv.height = innerHeight; };
   const make = () => Array.from({length:30}, () => ({
     x: Math.random()*cv.width, y: Math.random()*cv.height,
     vx: (Math.random()-.5)*.28, vy: (Math.random()-.5)*.28,
     r: Math.random()*1.4+.6, p: Math.random()*Math.PI*2
   }));
+
   const draw = () => {
-    cx.clearRect(0, 0, cv.width, cv.height);
+    if (!isVisible) return;
+
+    cx.fillStyle = '#ffffff';
+    cx.fillRect(0, 0, cv.width, cv.height);
+    
     N.forEach(n => {
       n.x += n.vx; n.y += n.vy; n.p += .013;
       if(n.x<0||n.x>cv.width) n.vx *= -1;
       if(n.y<0||n.y>cv.height) n.vy *= -1;
     });
-    for(let i=0;i<N.length;i++) for(let j=i+1;j<N.length;j++) {
-      const dx=N[i].x-N[j].x, dy=N[i].y-N[j].y, d=Math.sqrt(dx*dx+dy*dy);
-      if(d<138) {
-        cx.strokeStyle = `rgba(26,86,219,${(1-d/138)*.08})`;
-        cx.lineWidth = .6;
-        cx.beginPath(); cx.moveTo(N[i].x,N[i].y); cx.lineTo(N[j].x,N[j].y); cx.stroke();
+
+    for(let i=0;i<N.length;i++) {
+      for(let j=i+1;j<N.length;j++) {
+        const dx=N[i].x-N[j].x;
+        const dy=N[i].y-N[j].y;
+        const distSq = dx*dx + dy*dy; 
+
+        if(distSq < 19044) { 
+          const d = Math.sqrt(distSq);
+          cx.strokeStyle = `rgba(26,86,219,${(1-d/138)*.08})`;
+          cx.lineWidth = .6;
+          cx.beginPath(); cx.moveTo(N[i].x,N[i].y); cx.lineTo(N[j].x,N[j].y); cx.stroke();
+        }
       }
     }
+
     N.forEach(n => {
       const p = Math.sin(n.p)*.5+.5;
       cx.beginPath(); cx.arc(n.x,n.y,n.r+p*.7,0,Math.PI*2);
       cx.fillStyle = `rgba(26,86,219,${.07+p*.1})`; cx.fill();
     });
-    requestAnimationFrame(draw);
+    animFrameId = requestAnimationFrame(draw);
   };
+
   resize(); N = make(); draw();
-  window.addEventListener('resize', () => { resize(); N = make(); });
+
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => { resize(); N = make(); }, 150);
+  });
 })();
 
 /* ── TYPEWRITER ─────────────────────────────────────────────── */
-const TW = ['AI Product Manager','GenAI Consultant','Problem Finder','AI Solutions Architect','Product Strategist'];
+const TW = ['AI Product Manager','GenAI Consultant','BPA Architect','Internal Tooling Expert','Systems Thinker'];
 let ti=0, tc=0, td=false;
 const tel = document.getElementById('tw');
 function typewrite() {
+  if(!tel) return;
   const w = TW[ti % TW.length];
   tel.textContent = td ? w.slice(0,--tc) : w.slice(0,++tc);
   if(!td && tc===w.length) { td=true; setTimeout(typewrite,1600); return; }
@@ -896,14 +680,11 @@ function typewrite() {
 }
 setTimeout(typewrite, 600);
 
-/* ── COUNTERS ─────────────────────────────────────────────────
-   Stat numbers start at final value — always visible.
-   Counter animates from 0 to final for visual delight only.
-   ─────────────────────────────────────────────────────────── */
+/* ── COUNTERS ───────────────────────────────────────────────── */
 function counter(id, target, suffix) {
   const el = document.getElementById(id);
   if(!el) return;
-  el.textContent = target + suffix; // set final value immediately
+  el.textContent = target + suffix;
   let c = 0;
   const step = Math.max(1, Math.floor(target/40));
   const iv = setInterval(() => {
@@ -916,31 +697,18 @@ function counter(id, target, suffix) {
     }
   }, 28);
 }
-// Run immediately — no waiting for load events
 counter('s1', 78, '%');
 counter('s2', 4, '+');
 counter('s3', 3, '+');
 
-/* ── SCROLL REVEAL ────────────────────────────────────────────
-   APPROACH: Elements have .anim class but NO opacity:0 default.
-   They are always fully visible. When they enter viewport,
-   observer adds .animate which triggers the keyframe animation.
-   Animation starts from opacity:0.01 but since element was
-   visible before, it replays smoothly. No content ever hidden.
-   ─────────────────────────────────────────────────────────── */
+/* ── SCROLL REVEAL ──────────────────────────────────────────── */
 (function() {
   const items = document.querySelectorAll('.anim');
-  if(!items.length) return;
-
-  if(!window.IntersectionObserver) {
-    // No observer support — elements already visible, nothing to do
-    return;
-  }
+  if(!items.length || !window.IntersectionObserver) return;
 
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if(e.isIntersecting) {
-        // Small delay so element is clearly in view before animating
         setTimeout(() => e.target.classList.add('animate'), 50);
         obs.unobserve(e.target);
       }
@@ -954,7 +722,8 @@ counter('s3', 3, '+');
 function toggleMenu() { document.getElementById('ndrop').classList.toggle('show'); }
 function closeMenu()  { document.getElementById('ndrop').classList.remove('show'); }
 document.addEventListener('click', e => {
-  if(!document.getElementById('burger').contains(e.target)) closeMenu();
+  const burger = document.getElementById('burger');
+  if(burger && !burger.contains(e.target)) closeMenu();
 });
 
 /* ── GEMINI API ─────────────────────────────────────────────── */
@@ -978,8 +747,10 @@ async function runDemo() {
   const btn = document.getElementById('dbtn');
   const res = document.getElementById('dresult');
   const out = document.getElementById('doutput');
-  btn.disabled = true; btn.textContent = 'Thinking…';
+  
+  btn.disabled = true; btn.textContent = 'Analyzing Architecture…';
   res.classList.remove('show');
+  
   try {
     const reply = await callGemini([{ role: 'user', content: 'Business problem: ' + problem }], DEMO_SYS);
     out.textContent = reply;
@@ -987,23 +758,25 @@ async function runDemo() {
   } catch(e) {
     out.textContent = '⚠️ ' + e.message;
     res.classList.add('show');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Generate Architecture Strategy →';
   }
-  btn.disabled = false; btn.textContent = 'Analyse with AI →';
 }
 
 /* ── CHATBOT ────────────────────────────────────────────────── */
 let chatOpen = false, hist = [];
+let isWaitingForReply = false;
 
 function toggleChat() {
   chatOpen = !chatOpen;
   document.getElementById('cwin').classList.toggle('open', chatOpen);
   document.getElementById('cbi').style.display = chatOpen ? 'none' : 'inline';
   document.getElementById('cbx').style.display = chatOpen ? 'inline' : 'none';
-  document.getElementById('cbl').textContent = chatOpen ? 'Close' : "Ask Ravi's AI";
+  document.getElementById('cbl').textContent = chatOpen ? 'Close' : "Talk Strategy with AI";
   if(chatOpen) setTimeout(() => document.getElementById('cin').focus(), 300);
 }
 
-function addMsg(text, role, html) {
+function addMsg(text, role, html=false) {
   const msgs = document.getElementById('cmsgs');
   const w = document.createElement('div'); w.className = 'cm ' + role;
   const b = document.createElement('div'); b.className = 'cmb';
@@ -1019,42 +792,21 @@ function showTyping() {
 }
 function rmTyping() { const t = document.getElementById('typ'); if(t) t.remove(); }
 
-function showForm() {
+function showCalendly() {
   const msgs = document.getElementById('cmsgs');
   const w = document.createElement('div'); w.className = 'cm b';
+  // IMPORTANT: Replace the href below with your actual Calendly link
   w.innerHTML = `<div class="cmb" style="max-width:100%;padding:0;background:transparent;border:none;">
-    <div class="sform">
-      <div class="sfti">📅 Schedule with Ravi</div>
-      <span class="sflb">Your Name</span>
-      <input class="sfin" id="sfn" type="text" placeholder="Jane Smith"/>
-      <span class="sflb">Your Email</span>
-      <input class="sfin" id="sfe" type="email" placeholder="jane@company.com"/>
-      <span class="sflb">Company / Role</span>
-      <input class="sfin" id="sfc" type="text" placeholder="e.g. TechCo · AI PM Role"/>
-      <span class="sflb">Preferred Slot</span>
-      <select class="sfsel" id="sft">
-        <option value="">Select time</option>
-        <option>Weekday Morning (9–12pm IST)</option>
-        <option>Weekday Afternoon (2–5pm IST)</option>
-        <option>Weekday Evening (6–8pm IST)</option>
-        <option>Weekend Morning (10am–12pm IST)</option>
-      </select>
-      <button class="sfsub" onclick="submitForm()">Confirm →</button>
+    <div class="sform" style="text-align:center;">
+      <div class="sfti">📅 Let's Talk Strategy</div>
+      <p style="font-size:12.5px;color:var(--t2);margin-bottom:14px;line-height:1.5;">Grab 30 minutes on my calendar to discuss AI architecture, product strategy, or process automation.</p>
+      <a href="https://calendly.com/" target="_blank" class="sfsub" style="display:block;text-decoration:none;">Open Calendly ↗</a>
     </div></div>`;
   msgs.appendChild(w); msgs.scrollTop = msgs.scrollHeight;
 }
 
-function submitForm() {
-  const n = document.getElementById('sfn')?.value.trim();
-  const e = document.getElementById('sfe')?.value.trim();
-  const t = document.getElementById('sft')?.value;
-  const c = document.getElementById('sfc')?.value.trim();
-  if(!n||!e||!t) { alert('Please fill name, email and preferred time.'); return; }
-  document.querySelectorAll('.sform').forEach(f => f.closest('.cm').remove());
-  addMsg(`✅ <strong>Interview request confirmed!</strong><br/><br/>${n}, Ravi will contact you at <strong>${e}</strong> within 24 hours to confirm the slot.<br/><strong>Requested slot:</strong> ${t}${c?`<br/><strong>Company/Role:</strong> ${c}`:''}<br/><br/>You can also reach Ravi directly at <strong>ravirajmishra189@gmail.com</strong> or <strong>+91-9798455488</strong>.`, 'b', true);
-}
-
 function qs(btn) {
+  if (isWaitingForReply) return;
   const t = btn.textContent;
   const s = document.getElementById('csugg'); if(s) s.remove();
   document.getElementById('cin').value = t;
@@ -1063,24 +815,35 @@ function qs(btn) {
 
 async function csend() {
   const inp = document.getElementById('cin');
-  const text = inp.value.trim(); if(!text) return;
+  const text = inp.value.trim(); 
+  if(!text || isWaitingForReply) return;
+  
+  isWaitingForReply = true;
   inp.value = '';
+  inp.disabled = true; 
+  
   addMsg(text, 'u');
   hist.push({ role: 'user', content: text });
   showTyping();
+  
   try {
     const reply = await callGemini(hist, CHAT_SYS);
     rmTyping();
     hist.push({ role: 'assistant', content: reply });
-    if(reply.trim() === '[SHOW_FORM]') {
-      addMsg('Sure! Please fill in the details below and Ravi will confirm within 24 hours.', 'b');
-      setTimeout(showForm, 400);
+    
+    if(reply.trim().includes('[SHOW_CALENDLY]')) {
+      addMsg('Absolutely. You can book a time directly on Ravi\'s calendar below:', 'b');
+      setTimeout(showCalendly, 400);
     } else {
       addMsg(reply, 'b');
     }
   } catch(e) {
     rmTyping();
-    hing went wrong connecting to the AI. Please reach Ravi directly at ravirajmishra189@gmail.com or +91-9798455488.', 'b');
+    addMsg('Something went wrong connecting to the AI. Please reach Ravi directly at ravirajmishra189@gmail.com.', 'b');
+  } finally {
+    isWaitingForReply = false;
+    inp.disabled = false;
+    setTimeout(() => inp.focus(), 10);
   }
 }
 </script>
