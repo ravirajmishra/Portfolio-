@@ -7,7 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-/* CSS Styles remain identical for your UI */
 :root {
   --bg:#ffffff;--bg-soft:#f8f8fa;--text-1:#0a0a0f;--text-2:#3d3d4a;--text-3:#888898;
   --accent:#1a56db;--accent-soft:#eef2fd;--accent-2:#0a3399;
@@ -39,6 +38,8 @@ nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:200;back
 .ncta:hover{background:var(--accent)!important;transform:scale(1.04)!important}
 .ntog{display:none;flex-direction:column;gap:5px;cursor:pointer}
 .ntog span{width:20px;height:2px;background:var(--text-1);border-radius:2px}
+
+/* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;padding-top:100px;padding-bottom:60px}
 .hi{display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:center;width:100%}
 .badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);border:1px solid rgba(26,86,219,.14);border-radius:var(--rp);padding:6px 16px;font-size:12.5px;font-weight:500;color:var(--accent);margin-bottom:26px;animation:fu .6s .1s ease both}
@@ -61,34 +62,17 @@ nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:200;back
 .sl{font-size:12px;color:var(--text-3);margin-top:2px}
 .si{margin-bottom:18px}.si:last-child{margin-bottom:0}
 .ssep{height:1px;background:var(--gb);margin:16px 0}
+
+/* SECTION */
 .slabel{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
 .slabel::before{content:'';width:18px;height:2px;background:var(--accent);border-radius:2px}
 .stitle{font-family:var(--serif);font-size:clamp(30px,4vw,46px);line-height:1.1;letter-spacing:-.025em;color:var(--text-1);margin-bottom:12px}
 .ssub{font-size:16px;color:var(--text-2);font-weight:300;max-width:520px;line-height:1.6;margin-bottom:52px}
-#about{padding:100px 0}
-.agrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
-.gc{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--gb);border-radius:var(--rc);box-shadow:var(--s-sm);padding:28px 26px;transition:transform .3s cubic-bezier(.25,.8,.25,1),box-shadow .3s}
-.gc:hover{transform:translateY(-5px);box-shadow:var(--s-lg)}
-.gc .ic{width:42px;height:42px;border-radius:13px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:16px}
-.gc h3{font-size:16px;font-weight:600;color:var(--text-1);margin-bottom:9px}
-.gc p{font-size:14.5px;color:var(--text-2);line-height:1.65;font-weight:300}
-.term{grid-column:span 2;background:#0d1117;border:1px solid rgba(255,255,255,.08);border-radius:var(--rc);box-shadow:var(--s-md);overflow:hidden}
-.ttop{display:flex;align-items:center;gap:7px;padding:13px 18px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.06)}
-.td{width:11px;height:11px;border-radius:50%}
-.tr{background:#ff5f56}.ta{background:#ffbd2e}.tg{background:#27c93f}
-.ttit{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.3);margin-left:8px}
-.tbody{padding:22px 24px;font-family:var(--mono);font-size:13.5px;line-height:1.85}
-.tp{color:#27c93f}.tcm{color:rgba(255,255,255,.3)}.tk{color:#79c0ff}.tv{color:#a5d6ff}.ts{color:#a8ff78}.tout{color:rgba(255,255,255,.7)}
-.tl{display:block}
-.tcur{display:inline-block;width:9px;height:15px;background:#27c93f;border-radius:1px;animation:blink 1s step-end infinite;vertical-align:middle;margin-left:2px}
+
+/* PROJECTS */
 #projects{padding:100px 0;background:var(--bg-soft)}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .pc{background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid var(--gb);border-radius:var(--rc);box-shadow:var(--s-sm);padding:32px 28px;transition:all .35s cubic-bezier(.25,.8,.25,1);position:relative;overflow:hidden}
-.pc::after{content:'';position:absolute;top:-100%;left:0;right:0;height:40%;background:linear-gradient(to bottom,transparent,rgba(26,86,219,.05) 50%,transparent);transition:top .5s ease;pointer-events:none}
-.pc:hover::after{top:150%}
-.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,var(--accent),#60a5fa,var(--accent));background-size:200%;opacity:0;transition:opacity .3s;animation:gs 3s linear infinite}
-.pc:hover::before{opacity:1}
-@keyframes gs{0%{background-position:0%}100%{background-position:200%}}
 .pc:hover{transform:translateY(-6px);box-shadow:var(--s-lg);border-color:rgba(26,86,219,.12)}
 .pf{grid-column:span 2}
 .ptag{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:5px 12px;border-radius:var(--rp);margin-bottom:14px}
@@ -103,32 +87,40 @@ nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:200;back
 .pim{text-align:right;min-width:130px}
 .pin{font-family:var(--serif);font-size:52px;color:var(--accent);line-height:1;letter-spacing:-.04em}
 .pil{font-size:12px;color:var(--text-3);margin-top:5px;line-height:1.4}
-.different{margin-top:14px;padding:12px 14px;background:rgba(26,86,219,.04);border-left:3px solid var(--accent);border-radius:0 10px 10px 0}
-.different-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
-.different-val{font-size:13px;color:var(--text-2);line-height:1.5;font-weight:300;font-style:italic}
-.ppills{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-.pp{background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.07);border-radius:var(--rp);padding:4px 13px;font-size:12px;font-weight:500;color:var(--text-2)}
 .pdemo{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:white;padding:8px 16px;border-radius:var(--rp);font-size:12px;font-weight:600;text-decoration:none;margin-top:12px;transition:all .2s}
 .pdemo:hover{background:var(--accent-2);transform:scale(1.05)}
+
+/* ABOUT & SKILLS Logic remains same */
+#about{padding:100px 0}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
+.gc{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--gb);border-radius:var(--rc);box-shadow:var(--s-sm);padding:28px 26px;transition:transform .3s cubic-bezier(.25,.8,.25,1),box-shadow .3s}
+.gc:hover{transform:translateY(-5px);box-shadow:var(--s-lg)}
+.gc h3{font-size:16px;font-weight:600;color:var(--text-1);margin-bottom:9px}
+.gc p{font-size:14.5px;color:var(--text-2);line-height:1.65;font-weight:300}
+.term{grid-column:span 2;background:#0d1117;border:1px solid rgba(255,255,255,.08);border-radius:var(--rc);box-shadow:var(--s-md);overflow:hidden}
+.ttop{display:flex;align-items:center;gap:7px;padding:13px 18px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.06)}
+.td{width:11px;height:11px;border-radius:50%}
+.tr{background:#ff5f56}.ta{background:#ffbd2e}.tg{background:#27c93f}
+.tbody{padding:22px 24px;font-family:var(--mono);font-size:13.5px;line-height:1.85}
+.tp{color:#27c93f}.tk{color:#79c0ff}.tv{color:#a5d6ff}.ts{color:#a8ff78}.tout{color:rgba(255,255,255,.7)}
+.tl{display:block}
+.tcur{display:inline-block;width:9px;height:15px;background:#27c93f;border-radius:1px;animation:blink 1s step-end infinite;vertical-align:middle;margin-left:2px}
+
 #skills{padding:100px 0}
 .skgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.skg{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--gb);border-radius:var(--rc);box-shadow:var(--s-sm);padding:24px 22px;transition:transform .3s}
-.skg:hover{transform:translateY(-3px)}
+.skg{background:var(--glass);backdrop-filter:blur(20px);border:1px solid var(--gb);border-radius:var(--rc);padding:24px 22px}
 .skgt{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:14px}
 .sktags{display:flex;flex-wrap:wrap;gap:7px}
-.st{background:rgba(26,86,219,.05);border:1px solid rgba(26,86,219,.1);color:var(--accent-2);padding:5px 13px;border-radius:var(--rp);font-size:12.5px;font-weight:500;transition:all .2s;cursor:default}
-.st:hover{background:var(--accent);color:white;border-color:var(--accent);transform:scale(1.04)}
+.st{background:rgba(26,86,219,.05);color:var(--accent-2);padding:5px 13px;border-radius:var(--rp);font-size:12.5px;font-weight:500}
+
 #contact{padding:100px 0;background:var(--bg-soft)}
-.cw{background:var(--glass);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border:1px solid var(--gb);border-radius:var(--rc);box-shadow:var(--s-md);padding:56px 60px;text-align:center;max-width:680px;margin:0 auto}
-.cw p{font-size:16px;color:var(--text-2);font-weight:300;margin-bottom:34px;line-height:1.65}
+.cw{background:var(--glass);border:1px solid var(--gb);border-radius:var(--rc);padding:56px 60px;text-align:center;max-width:680px;margin:0 auto}
 .cls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.cp{display:inline-flex;align-items:center;gap:8px;background:white;border:1.5px solid var(--gb);border-radius:var(--rp);padding:11px 22px;font-size:13.5px;font-weight:500;color:var(--text-1);text-decoration:none;transition:all .25s;box-shadow:var(--s-sm)}
-.cp:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,86,219,.12)}
+.cp{display:inline-flex;align-items:center;gap:8px;background:white;border:1.5px solid var(--gb);border-radius:var(--rp);padding:11px 22px;font-size:13.5px;font-weight:500;color:var(--text-1);text-decoration:none}
 footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);border-top:1px solid var(--gb);font-family:var(--mono)}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
 .rv.vis{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
-@keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 </style>
 </head>
 <body>
@@ -143,7 +135,6 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact" class="ncta">Hire Me</a></li>
   </ul>
-  <div class="ntog" onclick="toggleNav()"><span></span><span></span><span></span></div>
 </nav>
 
 <section id="hero">
@@ -153,7 +144,7 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
         <div class="badge"><span class="bdot"></span>Open to PM &amp; Gen AI Roles — Bangalore</div>
         <h1 class="hh">Identifying friction.<br/><em>Building the solution.</em></h1>
         <div class="twline"><span id="tw"></span><span class="cur"></span></div>
-        <p class="hdesc">Product engineer architecting AI-enabled workflows. I translate complex technical capabilities into practical, high-impact business outcomes.</p>
+        <p class="hdesc">Product engineer architecting AI-enabled workflows. I translate complex technical capabilities into practical, high-impact business outcomes[cite: 1, 2, 6].</p>
         <div class="hact">
           <a href="#projects" class="bp1">View My Work</a>
           <a href="#contact" class="bp2">Get in Touch</a>
@@ -161,11 +152,40 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
       </div>
       <div class="hcard">
         <div class="clabel">At a Glance</div>
-        <div class="si"><div class="sn" data-target="78" data-suffix="%">0%</div><div class="sl">Manual effort reduced</div></div>
+        <div class="si"><div class="sn" data-target="78" data-suffix="%">0%</div><div class="sl">Manual effort reduced [cite: 1, 17]</div></div>
         <div class="ssep"></div>
-        <div class="si"><div class="sn" data-target="5" data-suffix="+">0+</div><div class="sl">AI projects & tools</div></div>
+        <div class="si"><div class="sn" data-target="5" data-suffix="+">0+</div><div class="sl">AI projects & tools [cite: 1, 25]</div></div>
         <div class="ssep"></div>
-        <div class="si"><div class="sn" data-target="2" data-suffix="+">0+</div><div class="sl">Years in Eng & Data</div></div>
+        <div class="si"><div class="sn" data-target="2" data-suffix="+">0+</div><div class="sl">Years in Eng & Data </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="w">
+    <div class="slabel">About Me</div>
+    <h2 class="stitle">Engineering rigor.<br/>Product thinking.</h2>
+    <p class="ssub">Mechanical engineer → Data specialist → GenAI builder[cite: 1, 5, 15, 21]. I think in systems and failure modes, ensuring AI solutions are robust, not just clever.</p>
+    <div class="agrid">
+      <div class="gc rv">
+        <h3>Industrial Foundation</h3>
+        <p>Mechanical Engineering background. Trained to optimize processes and maintain quality standards in high-stakes environments—now applied to AI workflows[cite: 1, 21, 23, 24].</p>
+      </div>
+      <div class="gc rv">
+        <h3>Product-First Approach</h3>
+        <p>I focus on adoption design—removing technical barriers so non-technical users can leverage complex LLMs with ease[cite: 1, 12, 19].</p>
+      </div>
+      <div class="term rv">
+        <div class="tbody">
+          <span class="tl"><span class="tp">❯</span> <span class="tcm"># Profile Context</span></span>
+          <span class="tl"><span class="tk">profile</span> = {</span>
+          <span class="tl">&nbsp;&nbsp;<span class="ts">"focus"</span>: <span class="tv">"workflow automation & RAG" [cite: 1, 6]</span>,</span>
+          <span class="tl">&nbsp;&nbsp;<span class="ts">"strategy"</span>: <span class="tv">"problem-first thinking" [cite: 1, 12]</span>,</span>
+          <span class="tl">&nbsp;&nbsp;<span class="ts">"background"</span>: [<span class="tv">"mechanical eng" [cite: 1, 40]</span>, <span class="tv">"applied GenAI" [cite: 1, 15]</span>]</span>
+          <span class="tl">}</span>
+          <span class="tl"><span class="tp">❯</span> <span class="tcur"></span></span>
+        </div>
       </div>
     </div>
   </div>
@@ -175,101 +195,121 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
   <div class="w">
     <div class="slabel">Projects</div>
     <h2 class="stitle">Evidence of Impact.</h2>
-    <p class="ssub">Functional tools built to solve specific market and enterprise gaps.</p>
-
     <div class="pgrid">
-
       <div class="pc pf rv">
-        <span class="ptag">⭐ Core Work · Sankhyana Consulting</span>
+        <span class="ptag">⭐ Core Work · Sankhyana Consulting [cite: 1, 16]</span>
         <h3 class="pname">GenAI Content Automation Studio</h3>
         <div class="pf-inner">
           <div>
             <div class="case-grid">
-              <div class="case-cell">
-                <div class="case-cell-label">🔴 Problem</div>
-                <div class="case-cell-val">Internal teams spending excessive hours manually creating training PPTs and notes.</div>
-              </div>
-              <div class="case-cell">
-                <div class="case-cell-label">💡 Insight</div>
-                <div class="case-cell-val">Users needed one-click outputs, not complex chat prompts. Friction was in the UI.</div>
-              </div>
-              <div class="case-cell">
-                <div class="case-cell-label">⚡ Decision</div>
-                <div class="case-cell-val">Architected a tool using Gemini & Pexels to generate full materials from a single input.</div>
-              </div>
-              <div class="case-cell highlight">
-                <div class="case-cell-label">✅ Outcome</div>
-                <div class="case-cell-val">78% reduction in manual effort. Time-to-output moved from hours to minutes.</div>
-              </div>
+              <div class="case-cell"><div class="case-cell-label">🔴 Problem</div><div class="case-cell-val">Excessive manual effort in content creation[cite: 1, 17].</div></div>
+              <div class="case-cell"><div class="case-cell-label">💡 Insight</div><div class="case-cell-val">One-click outputs remove adoption barriers[cite: 1, 19].</div></div>
+              <div class="case-cell"><div class="case-cell-label">⚡ Decision</div><div class="case-cell-val">Architected tool using Gemini for automated PPTs[cite: 1, 31].</div></div>
+              <div class="case-cell highlight"><div class="case-cell-label">✅ Outcome</div><div class="case-cell-val">78% reduction in manual effort[cite: 1, 17].</div></div>
             </div>
-            <div class="ppills"><span class="pp">GenAI</span><span class="pp">Workflow Automation</span><span class="pp">Gemini API</span></div>
-            <a href="#" class="pdemo">View Live Demo →</a>
+            <a href="https://portfolio-ravirajmishraai.vercel.app" class="pdemo" target="_blank">View Live Demo → </a>
           </div>
-          <div class="pim">
-            <div class="pin">78%</div>
-            <div class="pil">Manual effort<br/>Reduction delivered</div>
-          </div>
+          <div class="pim"><div class="pin">78% [cite: 1, 17]</div><div class="pil">Manual effort reduction</div></div>
         </div>
       </div>
 
-      <div class="pc rv d1">
-        <span class="ptag">Personal Build · Career Tech</span>
+      <div class="pc rv">
+        <span class="ptag">Personal Build [cite: 1, 26]</span>
         <h3 class="pname">Job AI Pro</h3>
-        <div class="case-grid" style="margin-bottom:16px">
-          <div class="case-cell">
-            <div class="case-cell-label">🔴 Problem</div>
-            <div class="case-cell-val">Keyword matching ignores actual transferable skills.</div>
-          </div>
-          <div class="case-cell">
-            <div class="case-cell-label">💡 Insight</div>
-            <div class="case-cell-val">Recruiters scan for context. AI can bridge that gap by tailoring applications.</div>
-          </div>
-          <div class="case-cell">
-            <div class="case-cell-label">⚡ Decision</div>
-            <div class="case-cell-val">Developed a RAG-based platform for CV tailoring and cold-outreach automation.</div>
-          </div>
-          <div class="case-cell highlight">
-            <div class="case-cell-label">✅ Outcome</div>
-            <div class="case-cell-val">Functional tool surfacing high-fit PM and AI roles.</div>
-          </div>
+        <div class="case-grid">
+          <div class="case-cell"><div class="case-cell-label">🔴 Problem</div><div class="case-cell-val">Matching ignores transferable skills[cite: 1, 27].</div></div>
+          <div class="case-cell"><div class="case-cell-label">💡 Insight</div><div class="case-cell-val">Context bridges the fit gap[cite: 1, 27].</div></div>
+          <div class="case-cell highlight"><div class="case-cell-label">✅ Outcome</div><div class="case-cell-val">Automates CV tailoring & outreach[cite: 1, 27].</div></div>
         </div>
-        <div class="ppills"><span class="pp">RAG</span><span class="pp">LangChain</span><span class="pp">Agentic Workflows</span></div>
-        <a href="#" class="pdemo">View Live Demo →</a>
+        <a href="#" class="pdemo">Live Demo → [cite: 1, 26]</a>
       </div>
 
-      <div class="pc rv d2">
-        <span class="ptag">Strategic · Enterprise AI</span>
+      <div class="pc rv">
+        <span class="ptag">Strategic · Enterprise AI [cite: 1, 28]</span>
         <h3 class="pname">Opticore — AI Strategy</h3>
-        <div class="case-grid" style="margin-bottom:16px">
-          <div class="case-cell">
-            <div class="case-cell-label">🔴 Problem</div>
-            <div class="case-cell-val">Enterprises struggle to move from "AI hype" to "AI implementation."</div>
-          </div>
-          <div class="case-cell">
-            <div class="case-cell-label">💡 Insight</div>
-            <div class="case-cell-val">AI PRDs must define failure modes and risk mitigation to be viable.</div>
-          </div>
-          <div class="case-cell">
-            <div class="case-cell-label">⚡ Decision</div>
-            <div class="case-cell-val">Defined PRDs for AI-driven process optimization and risk management.</div>
-          </div>
-          <div class="case-cell highlight">
-            <div class="case-cell-label">✅ Outcome</div>
-            <div class="case-cell-val">Framework for translating business problems into AI scopes.</div>
-          </div>
+        <div class="case-grid">
+          <div class="case-cell"><div class="case-cell-label">🔴 Problem</div><div class="case-cell-val">Hype vs. Implementation gap[cite: 1, 29].</div></div>
+          <div class="case-cell highlight"><div class="case-cell-label">✅ Outcome</div><div class="case-cell-val">Standardized AI PRD framework[cite: 1, 29].</div></div>
         </div>
-        <div class="ppills"><span class="pp">AI Product Management</span><span class="pp">Strategy</span><span class="pp">PRDs</span></div>
-        <a href="#" class="pdemo">View Strategy Repo →</a>
+        <a href="#" class="pdemo">Strategy Link → [cite: 1, 28]</a>
       </div>
-
     </div>
   </div>
 </section>
 
+<section id="skills">
+  <div class="w">
+    <div class="slabel">Skills</div>
+    <div class="skgrid">
+      <div class="skg rv"><div class="skgt">AI &amp; GenAI [cite: 1, 9]</div><div class="sktags"><span class="st">LLM Implementation</span><span class="st">RAG</span><span class="st">LangChain</span><span class="st">Agents</span></div></div>
+      <div class="skg rv"><div class="skgt">Programming [cite: 1, 10]</div><div class="sktags"><span class="st">Python</span><span class="st">SQL</span><span class="st">MySQL</span><span class="st">MongoDB</span></div></div>
+      <div class="skg rv"><div class="skgt">ML &amp; Analytics [cite: 1, 11, 13]</div><div class="sktags"><span class="st">Scikit-learn</span><span class="st">Forecasting</span><span class="st">Tableau</span><span class="st">Alteryx</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="w">
+    <div class="cw rv">
+      <h2 class="stitle">Let's build something.</h2>
+      <p>Bangalore-based, open to PM & GenAI roles[cite: 1, 3, 42].</p>
+      <div class="cls">
+        <a href="mailto:ravirajmishra189@gmail.com" class="cp">Email Me </a>
+        <a href="https://linkedin.com/in/ravi-raj-mishra-ai" target="_blank" class="cp">LinkedIn </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>// ravi_raj_mishra · bangalore · built with intent </footer>
+
 <script>
-/* Typewriter words focused on your role */
 const TW_WORDS = ["AI Solutions Architect","GenAI Product Engineer","Process Specialist","Data Science Consultant"];
-/* ... rest of your original logic ... */
+let ti=0,tc=0,td=false;
+const tel=document.getElementById('tw');
+function tw(){
+  const w=TW_WORDS[ti%TW_WORDS.length];
+  tel.textContent=td?w.slice(0,--tc):w.slice(0,++tc);
+  if(!td&&tc===w.length){td=true;setTimeout(tw,1600);return}
+  if(td&&tc===0){td=false;ti++}
+  setTimeout(tw,td?48:88);
+}
+setTimeout(tw,900);
+
+const co=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target,t=+el.dataset.target,s=el.dataset.suffix||'';
+      let c=0;const st=Math.max(1,Math.floor(t/40));
+      const iv=setInterval(()=>{c=Math.min(c+st,t);el.textContent=c+s;if(c>=t)clearInterval(iv)},28);
+      co.unobserve(el);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-target]').forEach(e=>co.observe(e));
+
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(e=>ro.observe(e));
+
+const cv=document.getElementById('nc'),ct=cv.getContext('2d');
+let nodes=[];
+function resize(){cv.width=window.innerWidth;cv.height=window.innerHeight}
+window.addEventListener('resize',()=>{resize();nodes=mk()});resize();
+function mk(){return Array.from({length:36},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.8+1,p:Math.random()*Math.PI*2}))}
+nodes=mk();
+function draw(){
+  ct.clearRect(0,0,cv.width,cv.height);
+  nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;n.p+=.016;if(n.x<0||n.x>cv.width)n.vx*=-1;if(n.y<0||n.y>cv.height)n.vy*=-1});
+  for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){
+    const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,d=Math.sqrt(dx*dx+dy*dy);
+    if(d<150){ct.strokeStyle=`rgba(26,86,219,${(1-d/150)*.1})`;ct.lineWidth=.7;ct.beginPath();ct.moveTo(nodes[i].x,nodes[i].y);ct.lineTo(nodes[j].x,nodes[j].y);ct.stroke()}
+  }
+  nodes.forEach(n=>{const p=Math.sin(n.p)*.5+.5;ct.beginPath();ct.arc(n.x,n.y,n.r+p,0,Math.PI*2);ct.fillStyle=`rgba(26,86,219,${.1+p*.14})`;ct.fill()});
+  requestAnimationFrame(draw);
+}
+draw();
 </script>
 </body>
 </html>
