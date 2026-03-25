@@ -39,6 +39,7 @@ nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:200;back
 .ntog{display:none;flex-direction:column;gap:5px;cursor:pointer}
 .ntog span{width:20px;height:2px;background:var(--text-1);border-radius:2px}
 
+/* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;padding-top:100px;padding-bottom:60px}
 .hi{display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:center;width:100%}
 .badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);border:1px solid rgba(26,86,219,.14);border-radius:var(--rp);padding:6px 16px;font-size:12.5px;font-weight:500;color:var(--accent);margin-bottom:26px;animation:fu .6s .1s ease both}
@@ -62,11 +63,13 @@ nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:200;back
 .si{margin-bottom:18px}.si:last-child{margin-bottom:0}
 .ssep{height:1px;background:var(--gb);margin:16px 0}
 
+/* SECTION */
 .slabel{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
 .slabel::before{content:'';width:18px;height:2px;background:var(--accent);border-radius:2px}
 .stitle{font-family:var(--serif);font-size:clamp(30px,4vw,46px);line-height:1.1;letter-spacing:-.025em;color:var(--text-1);margin-bottom:12px}
 .ssub{font-size:16px;color:var(--text-2);font-weight:300;max-width:520px;line-height:1.6;margin-bottom:52px}
 
+/* ABOUT */
 #about{padding:100px 0}
 .agrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
 .gc{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--gb);border-radius:var(--rc);box-shadow:var(--s-sm);padding:28px 26px;transition:transform .3s cubic-bezier(.25,.8,.25,1),box-shadow .3s}
@@ -84,8 +87,10 @@ nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:200;back
 .tl{display:block}
 .tcur{display:inline-block;width:9px;height:15px;background:#27c93f;border-radius:1px;animation:blink 1s step-end infinite;vertical-align:middle;margin-left:2px}
 
+/* PROJECTS — PM CASE STUDY CARDS */
 #projects{padding:100px 0;background:var(--bg-soft)}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
 .pc{background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid var(--gb);border-radius:var(--rc);box-shadow:var(--s-sm);padding:32px 28px;transition:all .35s cubic-bezier(.25,.8,.25,1);position:relative;overflow:hidden}
 .pc::after{content:'';position:absolute;top:-100%;left:0;right:0;height:40%;background:linear-gradient(to bottom,transparent,rgba(26,86,219,.05) 50%,transparent);transition:top .5s ease;pointer-events:none}
 .pc:hover::after{top:150%}
@@ -94,24 +99,35 @@ nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:200;back
 @keyframes gs{0%{background-position:0%}100%{background-position:200%}}
 .pc:hover{transform:translateY(-6px);box-shadow:var(--s-lg);border-color:rgba(26,86,219,.12)}
 .pf{grid-column:span 2}
+
 .ptag{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:5px 12px;border-radius:var(--rp);margin-bottom:14px}
 .pname{font-family:var(--serif);font-size:21px;color:var(--text-1);margin-bottom:18px;line-height:1.2}
+
+/* PM case study rows */
 .case-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;border:1px solid var(--gb);border-radius:16px;overflow:hidden;margin-bottom:20px}
 .case-cell{padding:14px 16px;border-right:1px solid var(--gb)}
 .case-cell:last-child{border-right:none}
 .case-cell-label{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
 .case-cell-val{font-size:13px;color:var(--text-2);line-height:1.5;font-weight:400}
 .case-cell.highlight .case-cell-val{color:var(--accent);font-weight:600}
+
+/* Featured card layout */
 .pf-inner{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:start}
 .pim{text-align:right;min-width:130px}
 .pin{font-family:var(--serif);font-size:52px;color:var(--accent);line-height:1;letter-spacing:-.04em}
 .pil{font-size:12px;color:var(--text-3);margin-top:5px;line-height:1.4}
+
 .different{margin-top:14px;padding:12px 14px;background:rgba(26,86,219,.04);border-left:3px solid var(--accent);border-radius:0 10px 10px 0}
 .different-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
 .different-val{font-size:13px;color:var(--text-2);line-height:1.5;font-weight:300;font-style:italic}
+
 .ppills{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
 .pp{background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.07);border-radius:var(--rp);padding:4px 13px;font-size:12px;font-weight:500;color:var(--text-2)}
 
+.pdemo{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:white;padding:8px 16px;border-radius:var(--rp);font-size:12px;font-weight:600;text-decoration:none;margin-top:12px;transition:all .2s}
+.pdemo:hover{background:var(--accent-2);transform:scale(1.05)}
+
+/* SKILLS */
 #skills{padding:100px 0}
 .skgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .skg{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--gb);border-radius:var(--rc);box-shadow:var(--s-sm);padding:24px 22px;transition:transform .3s}
@@ -121,6 +137,7 @@ nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:200;back
 .st{background:rgba(26,86,219,.05);border:1px solid rgba(26,86,219,.1);color:var(--accent-2);padding:5px 13px;border-radius:var(--rp);font-size:12.5px;font-weight:500;transition:all .2s;cursor:default}
 .st:hover{background:var(--accent);color:white;border-color:var(--accent);transform:scale(1.04)}
 
+/* CONTACT */
 #contact{padding:100px 0;background:var(--bg-soft)}
 .cw{background:var(--glass);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border:1px solid var(--gb);border-radius:var(--rc);box-shadow:var(--s-md);padding:56px 60px;text-align:center;max-width:680px;margin:0 auto}
 .cw p{font-size:16px;color:var(--text-2);font-weight:300;margin-bottom:34px;line-height:1.65}
@@ -129,11 +146,13 @@ nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:200;back
 .cp:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,86,219,.12)}
 footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);border-top:1px solid var(--gb);font-family:var(--mono)}
 
+/* REVEAL */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
 .rv.vis{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
 @keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 
+/* CHATBOT */
 #chat-btn{position:fixed;bottom:28px;right:28px;z-index:999;display:flex;align-items:center;gap:10px;background:var(--accent);color:white;border:none;border-radius:var(--rp);padding:13px 22px 13px 18px;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;box-shadow:0 4px 24px rgba(26,86,219,.4);transition:all .25s;user-select:none}
 #chat-btn:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(26,86,219,.5)}
 .chat-pulse{position:absolute;top:-3px;right:-3px;width:12px;height:12px;border-radius:50%;background:#27c93f;border:2px solid white;animation:cpulse 2s infinite}
@@ -176,6 +195,7 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
 #chat-sd{width:36px;height:36px;border-radius:50%;background:var(--accent);border:none;color:white;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:all .2s}
 #chat-sd:hover{background:var(--accent-2);transform:scale(1.08)}
 
+/* RESPONSIVE */
 @media(max-width:860px){
   .hi{grid-template-columns:1fr}
   .hcard{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
@@ -224,7 +244,7 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
         <div class="badge"><span class="bdot"></span>Open to PM &amp; Gen AI Roles — Bangalore</div>
         <h1 class="hh">Identifying friction.<br/><em>Building the solution.</em></h1>
         <div class="twline"><span id="tw"></span><span class="cur"></span></div>
-        <p class="hdesc">Product thinker architecting AI-enabled workflows. I translate complex technical capabilities into practical, high-impact business outcomes[cite: 1, 6, 7].</p>
+        <p class="hdesc">Product engineer architecting AI-enabled workflows. I translate complex technical capabilities into practical, high-impact business outcomes.</p>
         <div class="hact">
           <a href="#projects" class="bp1">View My Work</a>
           <a href="#contact" class="bp2">Get in Touch</a>
@@ -232,11 +252,11 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
       </div>
       <div class="hcard">
         <div class="clabel">At a Glance</div>
-        <div class="si"><div class="sn" data-target="78" data-suffix="%">0%</div><div class="sl">Manual effort reduced</div></div>
+        <div class="si"><div class="sn" data-target="78" data-suffix="%">0%</div><div class="sl">Cost reduction delivered</div></div>
         <div class="ssep"></div>
-        <div class="si"><div class="sn" data-target="5" data-suffix="+">0+</div><div class="sl">AI projects built</div></div>
+        <div class="si"><div class="sn" data-target="4" data-suffix="+">0+</div><div class="sl">AI products built</div></div>
         <div class="ssep"></div>
-        <div class="si"><div class="sn" data-target="2" data-suffix="+">0+</div><div class="sl">Years in Eng &amp; Data</div></div>
+        <div class="si"><div class="sn" data-target="2" data-suffix="+">0+</div><div class="sl">Years in AI &amp; Data</div></div>
       </div>
     </div>
   </div>
@@ -245,18 +265,18 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
 <section id="about">
   <div class="w">
     <div class="slabel">About Me</div>
-    <h2 class="stitle">Engineering rigor.<br/>A useful perspective.</h2>
-    <p class="ssub">Mechanical engineer → behavioral thinker → AI builder. Each layer adds a robust edge to my problem-solving approach[cite: 5, 40].</p>
+    <h2 class="stitle">An unusual path.<br/>A useful perspective.</h2>
+    <p class="ssub">Mechanical engineer → behavioral thinker → AI builder. Each chapter added a layer that pure coders don't have.</p>
     <div class="agrid">
       <div class="gc rv">
         <div class="ic">⚙️</div>
         <h3>Engineering Foundation</h3>
-        <p>B.Tech in Mechanical Engineering. Trained to think in systems and constraints — the same rigor that makes AI solutions robust[cite: 5, 40].</p>
+        <p>B.Tech in Mechanical Engineering. Trained to think in systems, constraints, and failure modes — the same rigor that makes AI solutions robust, not just clever.</p>
       </div>
       <div class="gc rv d1">
         <div class="ic">🧠</div>
-        <h3>Product-First Approach</h3>
-        <p>I focus on "Adoption Design"—removing technical barriers so non-technical users can leverage complex LLMs with a single click[cite: 19].</p>
+        <h3>Behavioral Psychology</h3>
+        <p>Deep study of human psychology informs every product decision. Understanding why people behave a certain way is the edge most technical builders don't have.</p>
       </div>
       <div class="term rv d2">
         <div class="ttop">
@@ -264,17 +284,18 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
           <span class="ttit">ravi@portfolio ~ profile.py</span>
         </div>
         <div class="tbody">
-<span class="tl"><span class="tp">❯</span> <span class="tcm"># My Core Philosophy</span></span>
+<span class="tl"><span class="tp">❯</span> <span class="tcm"># How I approach every problem</span></span>
 <span class="tl">&nbsp;</span>
 <span class="tl"><span class="tk">profile</span> = {</span>
-<span class="tl">&nbsp;&nbsp;<span class="ts">"approach"</span>:    <span class="tv">"problem-first thinking"</span>,</span>
-<span class="tl">&nbsp;&nbsp;<span class="ts">"strategy"</span>:    <span class="tv">"translating AI into practical outcomes"</span>,</span>
-<span class="tl">&nbsp;&nbsp;<span class="ts">"background"</span>:  [<span class="tv">"engineering"</span>, <span class="tv">"applied GenAI"</span>],</span>
+<span class="tl">&nbsp;&nbsp;<span class="ts">"approach"</span>:    <span class="tv">"problem-first, not tool-first"</span>,</span>
+<span class="tl">&nbsp;&nbsp;<span class="ts">"strength"</span>:    <span class="tv">"seeing what's broken before others do"</span>,</span>
+<span class="tl">&nbsp;&nbsp;<span class="ts">"background"</span>:  [<span class="tv">"engineering"</span>, <span class="tv">"psychology"</span>, <span class="tv">"applied AI"</span>],</span>
+<span class="tl">&nbsp;&nbsp;<span class="ts">"open_to"</span>:     [<span class="tv">"PM"</span>, <span class="tv">"AI Solutions"</span>, <span class="tv">"GenAI Roles"</span>],</span>
 <span class="tl">&nbsp;&nbsp;<span class="ts">"location"</span>:    <span class="tv">"Bangalore, India"</span></span>
 <span class="tl">}</span>
 <span class="tl">&nbsp;</span>
 <span class="tl"><span class="tp">❯</span> print(profile.deliver())</span>
-<span class="tl tout">&nbsp;&nbsp;78% manual effort reduction · Sankhyana Consulting</span>
+<span class="tl tout">&nbsp;&nbsp;₹4.2L saved · 78% cost reduction · Sankhyana Consulting</span>
 <span class="tl"><span class="tp">❯</span> <span class="tcur"></span></span>
         </div>
       </div>
@@ -286,80 +307,134 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
   <div class="w">
     <div class="slabel">Projects</div>
     <h2 class="stitle">How I think. What I built.</h2>
-    <p class="ssub">Every card shows the real PM thinking behind the work — problem, decision, and outcome[cite: 27, 29, 31].</p>
+    <p class="ssub">Every card shows the real PM thinking behind the work — problem, decision, outcome, and what I'd do differently.</p>
 
     <div class="pgrid">
+
       <div class="pc pf rv">
-        <span class="ptag">⭐ Core Work · Sankhyana Consulting</span>
-        <h3 class="pname">GenAI Content Automation Studio</h3>
+        <span class="ptag">⭐ Featured · AI Automation</span>
+        <h3 class="pname">AI Content Studio</h3>
         <div class="pf-inner">
           <div>
             <div class="case-grid">
               <div class="case-cell">
                 <div class="case-cell-label">🔴 Problem</div>
-                <div class="case-cell-val">Teams spending excessive hours manual creating training PPTs and notes[cite: 31, 32].</div>
+                <div class="case-cell-val">Marketing team spending ₹5.4L/yr on manual content creation. Slow, repetitive, no scale.</div>
               </div>
               <div class="case-cell">
                 <div class="case-cell-label">💡 Insight</div>
-                <div class="case-cell-val">Users needed one-click outputs. Friction was in the manual prompt interface[cite: 19, 31].</div>
+                <div class="case-cell-val">90% of the work was templated. Non-technical users just needed one button — not a prompt.</div>
               </div>
               <div class="case-cell">
                 <div class="case-cell-label">⚡ Decision</div>
-                <div class="case-cell-val">Built an internal tool using Gemini to generate materials from a single input[cite: 31].</div>
+                <div class="case-cell-val">Built one-click GenAI workflows. Prioritized adoption over features — zero friction for non-tech users.</div>
               </div>
               <div class="case-cell highlight">
                 <div class="case-cell-label">✅ Outcome</div>
-                <div class="case-cell-val">78% reduction in manual effort. Delivery time cut from hours to minutes[cite: 17, 32].</div>
+                <div class="case-cell-val">₹1.2L/yr. 78% cost cut. Fully adopted by team with zero training needed.</div>
               </div>
             </div>
-            <div class="ppills"><span class="pp">GenAI</span><span class="pp">Workflow Automation</span><span class="pp">Gemini API</span></div>
+            <div class="different">
+              <div class="different-label">What I'd do differently</div>
+              <div class="different-val">Add usage analytics from day one to understand which content types drive the most value — not just cost savings.</div>
+            </div>
+            <div class="ppills"><span class="pp">GenAI</span><span class="pp">Workflow Automation</span><span class="pp">Adoption Design</span><span class="pp">Cost Reduction</span></div>
+            <a href="#" class="pdemo">View Live Demo →</a>
           </div>
           <div class="pim">
             <div class="pin">78%</div>
-            <div class="pil">Effort reduction<br/>delivered at Sankhyana</div>
+            <div class="pil">Cost reduction<br/>₹5.4L → ₹1.2L/yr</div>
           </div>
         </div>
       </div>
 
       <div class="pc rv d1">
-        <span class="ptag">Personal Build · Career Tech</span>
-        <h3 class="pname">Job AI Pro</h3>
+        <span class="ptag">Personal Build · AI Productivity</span>
+        <h3 class="pname">Business Process Automator</h3>
         <div class="case-grid" style="margin-bottom:16px">
           <div class="case-cell">
             <div class="case-cell-label">🔴 Problem</div>
-            <div class="case-cell-val">Keyword matching ignores transferable skills for non-linear careers[cite: 27].</div>
+            <div class="case-cell-val">SME owners want AI but don't know where to start. Consultants give jargon, not answers.</div>
           </div>
           <div class="case-cell">
             <div class="case-cell-label">💡 Insight</div>
-            <div class="case-cell-val">Recruiters scan for context fit. AI can bridge the gap by tailoring the story[cite: 27].</div>
+            <div class="case-cell-val">Most workflows fit 5–6 AI patterns. The hard part is mapping business language to the right one.</div>
+          </div>
+          <div class="case-cell">
+            <div class="case-cell-label">⚡ Decision</div>
+            <div class="case-cell-val">Built a diagnostic tool. Describe your workflow in plain English → get the right AI approach.</div>
           </div>
           <div class="case-cell highlight">
             <div class="case-cell-label">✅ Outcome</div>
-            <div class="case-cell-val">Automates CV tailoring & personalized outreach messages[cite: 27].</div>
+            <div class="case-cell-val">Personal tool. Now exploring it as a consulting entry point for SME clients.</div>
           </div>
         </div>
-        <div class="ppills"><span class="pp">RAG</span><span class="pp">LangChain</span><span class="pp">Career Match</span></div>
+        <div class="different">
+          <div class="different-label">What I'd do differently</div>
+          <div class="different-val">Validate with 10 SME owners before building — I assumed the problem instead of confirming it first.</div>
+        </div>
+        <div class="ppills"><span class="pp">LLM</span><span class="pp">Problem Framing</span><span class="pp">SME Tools</span></div>
+        <a href="#" class="pdemo">View Live Demo →</a>
       </div>
 
       <div class="pc rv d2">
-        <span class="ptag">Strategic · Enterprise AI</span>
-        <h3 class="pname">Opticore — AI Strategy</h3>
+        <span class="ptag">Personal Build · Career Tech</span>
+        <h3 class="pname">Career Match</h3>
         <div class="case-grid" style="margin-bottom:16px">
           <div class="case-cell">
             <div class="case-cell-label">🔴 Problem</div>
-            <div class="case-cell-val">Enterprises struggle to move from hype to actual AI implementation[cite: 29].</div>
+            <div class="case-cell-val">Job search for non-linear careers is broken. Keyword matching ignores actual transferable skills.</div>
           </div>
           <div class="case-cell">
             <div class="case-cell-label">💡 Insight</div>
-            <div class="case-cell-val">Product requirement docs must define failure modes for robust AI[cite: 29].</div>
+            <div class="case-cell-val">I was the user. My own job hunt exposed exactly what was missing — profile-to-role fit, not resume-to-JD matching.</div>
+          </div>
+          <div class="case-cell">
+            <div class="case-cell-label">⚡ Decision</div>
+            <div class="case-cell-val">Built a profile-based matcher that maps skills and thinking style to role requirements, not just titles.</div>
           </div>
           <div class="case-cell highlight">
             <div class="case-cell-label">✅ Outcome</div>
-            <div class="case-cell-val">Standardized AI PRD framework for business process optimization[cite: 29].</div>
+            <div class="case-cell-val">Personal tool. Actively using it. Surfaces PM and AI roles that resume parsers would have missed.</div>
           </div>
         </div>
-        <div class="ppills"><span class="pp">AI PM</span><span class="pp">Strategy</span><span class="pp">PRDs</span></div>
+        <div class="different">
+          <div class="different-label">What I'd do differently</div>
+          <div class="different-val">Build the feedback loop earlier — track whether matched roles actually convert to interviews.</div>
+        </div>
+        <div class="ppills"><span class="pp">Python</span><span class="pp">Profile Matching</span><span class="pp">User Research</span></div>
+        <a href="#" class="pdemo">View Live Demo →</a>
       </div>
+
+      <div class="pc rv d1">
+        <span class="ptag">Research · Hyperlocal Behavior</span>
+        <h3 class="pname">City Pulse — Offline to Online</h3>
+        <div class="case-grid" style="margin-bottom:16px">
+          <div class="case-cell">
+            <div class="case-cell-label">🔴 Problem</div>
+            <div class="case-cell-val">Local Bangalore businesses had no way to measure how digital offers translate to physical footfall.</div>
+          </div>
+          <div class="case-cell">
+            <div class="case-cell-label">💡 Insight</div>
+            <div class="case-cell-val">Timing and urgency — not discount size — are the real behavioral triggers for offline store visits.</div>
+          </div>
+          <div class="case-cell">
+            <div class="case-cell-label">⚡ Decision</div>
+            <div class="case-cell-val">Ran a demand-routing experiment with real notification tests. Measured visit intent vs actual conversion.</div>
+          </div>
+          <div class="case-cell highlight">
+            <div class="case-cell-label">✅ Outcome</div>
+            <div class="case-cell-val">Research findings now form the product strategy for a City Discovery app targeting tier-2 India.</div>
+          </div>
+        </div>
+        <div class="different">
+          <div class="different-label">What I'd do differently</div>
+          <div class="different-val">Partner with 2–3 shops from day one instead of simulating — real data would have been stronger faster.</div>
+        </div>
+        <div class="ppills"><span class="pp">Behavioral Research</span><span class="pp">Offline → Online</span><span class="pp">India Markets</span></div>
+        <a href="#" class="pdemo">View Live Demo →</a>
+      </div>
+
     </div>
   </div>
 </section>
@@ -368,10 +443,14 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
   <div class="w">
     <div class="slabel">Skills</div>
     <h2 class="stitle">What I work with.</h2>
+    <p class="ssub">Tools and thinking frameworks I apply to build and ship.</p>
     <div class="skgrid">
-      <div class="skg rv"><div class="skgt">AI &amp; GenAI</div><div class="sktags"><span class="st">LLM Implementation</span><span class="st">RAG</span><span class="st">LangChain</span><span class="st">Prompt Engineering</span></div></div>
-      <div class="skg rv d1"><div class="skgt">Programming &amp; Data</div><div class="sktags"><span class="st">Python</span><span class="st">SQL</span><span class="st">MongoDB</span><span class="st">Snowflake</span></div></div>
-      <div class="skg rv d2"><div class="skgt">Product &amp; Delivery</div><div class="sktags"><span class="st">Agile / JIRA</span><span class="st">Workflow Automation</span><span class="st">Tableau</span><span class="st">AI ROI Analysis</span></div></div>
+      <div class="skg rv"><div class="skgt">AI &amp; GenAI</div><div class="sktags"><span class="st">LLM Implementation</span><span class="st">RAG Frameworks</span><span class="st">Prompt Engineering</span><span class="st">Agentic Workflows</span></div></div>
+      <div class="skg rv d1"><div class="skgt">Machine Learning</div><div class="sktags"><span class="st">Time Series</span><span class="st">Scikit-learn</span><span class="st">TensorFlow</span><span class="st">PyTorch</span></div></div>
+      <div class="skg rv d2"><div class="skgt">Programming &amp; Data</div><div class="sktags"><span class="st">Python</span><span class="st">SQL</span><span class="st">MongoDB</span><span class="st">Snowflake</span></div></div>
+      <div class="skg rv d1"><div class="skgt">Product &amp; Tools</div><div class="sktags"><span class="st">Agile / JIRA</span><span class="st">Tableau</span><span class="st">Alteryx</span><span class="st">Plotly</span></div></div>
+      <div class="skg rv d2"><div class="skgt">Thinking Frameworks</div><div class="sktags"><span class="st">Problem Framing</span><span class="st">Systems Thinking</span><span class="st">AI ROI Analysis</span><span class="st">User Behavior</span></div></div>
+      <div class="skg rv d3"><div class="skgt">Soft Skills</div><div class="sktags"><span class="st">Behavioral Analysis</span><span class="st">Client Communication</span><span class="st">Workshop Facilitation</span></div></div>
     </div>
   </div>
 </section>
@@ -381,17 +460,23 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
     <div class="cw rv">
       <div class="slabel" style="justify-content:center">Contact</div>
       <h2 class="stitle">Let's build something.</h2>
-      <p>Open to PM and GenAI roles in Bangalore. Reach out if you have a hard problem and want a robust solution.</p>
+      <p>Open to PM, AI Solutions, and GenAI roles in Bangalore or remote. If you have a hard problem and want someone who actually thinks — reach out.</p>
       <div class="cls">
-        <a href="mailto:ravirajmishra189@gmail.com" class="cp">Email Me</a>
-        <a href="https://linkedin.com/in/ravi-raj-mishra-ai" target="_blank" class="cp">LinkedIn</a>
-        <a href="tel:+919798455488" class="cp">Call 9798455488</a>
+        <a href="mailto:ravirajmishra189@gmail.com" class="cp">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>Email Me
+        </a>
+        <a href="https://linkedin.com/in/ravi-raj-mishra-ai" target="_blank" class="cp">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
+        </a>
+        <a href="tel:+919798455488" class="cp">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.2 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>Call 9798455488
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<footer>// ravi_raj_mishra · bangalore · engineering rigorous AI · 2026</footer>
+<footer>// ravi_raj_mishra · bangalore · built with intent · open to work</footer>
 
 <div id="chat-btn" onclick="toggleChat()">
   <div id="cbi"><svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
@@ -405,13 +490,14 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
     <div id="chat-av">R</div>
     <div>
       <div id="chat-nm">Ravi's AI Assistant</div>
-      <div id="chat-st"><span class="sdot"></span>Online · Ready to help</div>
+      <div id="chat-st"><span class="sdot"></span>Online · Can schedule interviews</div>
     </div>
     <div id="chat-pw">Powered by Gemini</div>
   </div>
   <div id="chat-msgs">
-    <div class="msg bot"><div class="mb">Hey! 👋 I'm Ravi's AI. Ask me anything about his engineering background, GenAI projects, or his work at Sankhyana.</div></div>
+    <div class="msg bot"><div class="mb">Hey! 👋 I'm Ravi's AI. Ask me anything about his background, projects, or skills — or I can help you <strong>schedule an interview</strong>.</div></div>
     <div class="chat-sugg" id="sugg">
+      <button onclick="qs(this)">What are his key skills?</button>
       <button onclick="qs(this)">Tell me about his projects</button>
       <button onclick="qs(this)">Schedule an interview</button>
       <button onclick="qs(this)">Is he open to remote?</button>
@@ -426,17 +512,37 @@ footer{padding:28px 24px;text-align:center;font-size:12.5px;color:var(--text-3);
 </div>
 
 <script>
+/* ============================================================
+   ★  EDIT CONTENT HERE — update this when anything changes
+   ============================================================ */
 const RAVI = {
   name:"Ravi Raj Mishra",email:"ravirajmishra189@gmail.com",phone:"+91-9798455488",
   linkedin:"linkedin.com/in/ravi-raj-mishra-ai",location:"Bangalore, India",
-  summary:"2+ years in Engineering and Data Science. Background in Mechanical Engineering and applied GenAI[cite: 5, 40]. Delivered 78% manual effort reduction at Sankhyana Consulting[cite: 17, 32].",
-  projects:"GenAI Content Studio (Sankhyana) | Job AI Pro | Opticore AI Strategy[cite: 27, 29, 31].",
-  skills:"LLM Implementation, RAG, LangChain, Python, SQL, JIRA, Tableau[cite: 9, 10, 12, 13]."
+  open_to:"Product Management, AI Solutions, GenAI, Data Science roles",
+  notice:"Can join immediately or within 2-4 weeks",
+  salary:"Open to discussion based on role and company",
+  remote:"Open to remote, hybrid, or in-office in Bangalore",
+  current:"Consultant & Corporate Trainer — Data Science & GenAI at Sankhyana Consulting Services",
+  summary:"2+ years in AI and Data Science. Background in Mechanical Engineering, behavioral psychology, and applied GenAI. Delivered 78% cost reduction through AI Content Studio at Sankhyana (₹5.4L to ₹1.2L/yr).",
+  projects:"AI Content Studio (78% cost reduction at Sankhyana) | Business Process Automator (maps workflows to AI solutions for SMEs) | Career Match (profile-based job matching for non-linear careers) | City Pulse (hyperlocal offline-to-online behavior research, Bangalore)",
+  skills:"LLM Implementation, RAG Frameworks, Prompt Engineering, Agentic Workflows, Python, SQL, MongoDB, Snowflake, Scikit-learn, TensorFlow, PyTorch, JIRA, Tableau, Agile",
+  strengths:"Problem-first thinking, behavioral analysis, explaining AI to non-technical stakeholders, identifying broken workflows and designing AI solutions around them",
+  education:"B.Tech Mechanical Engineering — Dr. B.C. Roy Engineering College (2019). Advanced Data Science — GUVI, IIT Madras.",
+  other:"Black Belt in Karate."
 };
 
-const SYS = `You are the AI assistant for Ravi Raj Mishra. Answer professionally based on: ${JSON.stringify(RAVI)}. Speak in third person. If someone wants to schedule, reply: [SHOW_FORM]`;
+const SYS = `You are the AI assistant on Ravi Raj Mishra's portfolio website. Answer questions from recruiters and hiring managers about Ravi.
+About Ravi: ${JSON.stringify(RAVI)}
+Rules:
+- Be warm, professional, concise. Max 3-4 sentences unless detail needed.
+- If someone wants to schedule an interview or call, reply ONLY: [SHOW_FORM]
+- Give contact details directly when asked.
+- Never invent information. If unsure say "I don't have that detail — email Ravi at ${RAVI.email}".
+- Speak about Ravi in third person.`;
 
-const TW_WORDS = ["AI Solutions Architect","GenAI Product Engineer","Process Specialist","Data Science Consultant"];
+const TW_WORDS = ["AI Product Manager","GenAI Builder","Problem Finder","Data Science Consultant"];
+
+/* Typewriter */
 let ti=0,tc=0,td=false;
 const tel=document.getElementById('tw');
 function tw(){
@@ -448,6 +554,7 @@ function tw(){
 }
 setTimeout(tw,900);
 
+/* Counters */
 const co=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
@@ -460,14 +567,17 @@ const co=new IntersectionObserver(entries=>{
 },{threshold:.5});
 document.querySelectorAll('[data-target]').forEach(e=>co.observe(e));
 
+/* Scroll reveal */
 const ro=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});
 },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(e=>ro.observe(e));
 
+/* Mobile nav */
 function toggleNav(){document.getElementById('nl').classList.toggle('open')}
 document.querySelectorAll('#nl a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nl').classList.remove('open')));
 
+/* Neural canvas */
 const cv=document.getElementById('nc'),ct=cv.getContext('2d');
 let nodes=[];
 function resize(){cv.width=window.innerWidth;cv.height=window.innerHeight}
@@ -486,7 +596,11 @@ function draw(){
 }
 draw();
 
+/* ============================================================
+   CHATBOT
+   ============================================================ */
 let chatOpen=false,hist=[];
+
 function toggleChat(){
   chatOpen=!chatOpen;
   document.getElementById('chat-win').classList.toggle('open',chatOpen);
@@ -495,6 +609,7 @@ function toggleChat(){
   document.getElementById('cbl').textContent=chatOpen?'Close':"Ask Ravi's AI";
   if(chatOpen)document.getElementById('chat-in').focus();
 }
+
 function addMsg(text,role,isHTML=false){
   const msgs=document.getElementById('chat-msgs');
   const d=document.createElement('div');d.className=`msg ${role}`;
@@ -502,6 +617,7 @@ function addMsg(text,role,isHTML=false){
   if(isHTML)b.innerHTML=text;else b.textContent=text;
   d.appendChild(b);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d;
 }
+
 function showTyping(){
   const msgs=document.getElementById('chat-msgs');
   const d=document.createElement('div');d.className='msg bot typing';d.id='typ';
@@ -509,6 +625,7 @@ function showTyping(){
   msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
 }
 function rmTyping(){const t=document.getElementById('typ');if(t)t.remove();}
+
 function showForm(){
   const msgs=document.getElementById('chat-msgs');
   const d=document.createElement('div');d.className='msg bot';
@@ -517,34 +634,65 @@ function showForm(){
       <div style="font-size:14px;font-weight:600;color:var(--text-1);margin-bottom:10px">📅 Schedule with Ravi</div>
       <label>Your Name</label><input id="sc-n" type="text" placeholder="Jane Smith"/>
       <label>Your Email</label><input id="sc-e" type="email" placeholder="jane@company.com"/>
+      <label>Company / Role</label><input id="sc-c" type="text" placeholder="e.g. TechCo · PM Role"/>
+      <label>Preferred Slot</label>
+      <select id="sc-t">
+        <option value="">Select a time</option>
+        <option>Weekday Morning (9am–12pm IST)</option>
+        <option>Weekday Afternoon (2pm–5pm IST)</option>
+        <option>Weekday Evening (6pm–8pm IST)</option>
+        <option>Weekend Morning (10am–12pm IST)</option>
+      </select>
       <button class="sf-sub" onclick="submitForm()">Confirm Request →</button>
     </div></div>`;
   msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
 }
+
 function submitForm(){
   const n=document.getElementById('sc-n')?.value.trim();
   const e=document.getElementById('sc-e')?.value.trim();
-  if(!n||!e){alert('Please fill all fields.');return;}
+  const t=document.getElementById('sc-t')?.value;
+  const c=document.getElementById('sc-c')?.value.trim();
+  if(!n||!e||!t){alert('Please fill name, email, and preferred time.');return;}
   document.querySelectorAll('.sf').forEach(f=>f.closest('.msg').remove());
-  addMsg(`✅ <strong>Request confirmed!</strong> Ravi will contact <strong>${e}</strong> within 24 hours.`,'bot',true);
+  addMsg(`✅ <strong>Request confirmed!</strong><br/><br/>${n}, Ravi will contact <strong>${e}</strong> within 24 hours.<br/><strong>Slot:</strong> ${t}${c?`<br/><strong>Company:</strong> ${c}`:''}<br/><br/>Direct contact: <strong>ravirajmishra189@gmail.com</strong>`,'bot',true);
+  console.log('Interview request:',{n,e,t,c});
 }
+
 function qs(btn){
   const t=btn.textContent;
   const s=document.getElementById('sugg');if(s)s.remove();
   document.getElementById('chat-in').value=t;send();
 }
+
 async function send(){
   const inp=document.getElementById('chat-in');
   const text=inp.value.trim();if(!text)return;
-  inp.value=''; addMsg(text,'user'); showTyping();
-  setTimeout(()=>{
+  inp.value='';
+  addMsg(text,'user');
+  hist.push({role:'user',content:text});
+  showTyping();
+  try{
+    /* ← calls your Vercel serverless function, not Anthropic directly */
+    const r=await fetch('/api/chat',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({messages:hist,system:SYS})
+    });
+    const data=await r.json();
     rmTyping();
-    if(text.toLowerCase().includes('interview')){
-      addMsg("[SHOW_FORM]",'bot'); showForm();
+    const reply=data.reply||"Sorry, something went wrong. Email Ravi directly at ravirajmishra189@gmail.com";
+    hist.push({role:'assistant',content:reply});
+    if(reply.trim()==='[SHOW_FORM]'){
+      addMsg("Sure! Fill this in and Ravi will confirm within 24 hours.",'bot');
+      setTimeout(showForm,400);
     } else {
-      addMsg("Ravi is an AI Product Engineer focused on translating complex tech into practical outcomes[cite: 2, 7]. Want to see his projects?",'bot');
+      addMsg(reply,'bot');
     }
-  },1000);
+  }catch(err){
+    rmTyping();
+    addMsg("Something went wrong. Reach Ravi at ravirajmishra189@gmail.com",'bot');
+  }
 }
 </script>
 </body>
